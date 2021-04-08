@@ -13,10 +13,16 @@
         <h1>Have you forgotten your password?</h1>
         <h3>Enter your email to reset it</h3>
         <form action="forgot" method="post" class="">
+            <input type="hidden" name="token" value="<c:out value="${token}"/>">
             <label>Email: </label><input type="email" name="username_input" <c:out value=""></c:out>><br><br>
                 <input type="submit" value="Reset password" class="">
                 <br>
-                <span>${resetMsg}</span>
+                <br>
+                <br>
+                <br>
+                <a href="<c:url value='/login'/>">Go back to the log in page</a>
+            <br>
+            <span>${resetMsg}</span>
         </form>
     </body>
 </html>
