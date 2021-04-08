@@ -13,7 +13,6 @@
     <class>domain.CompanyPositions</class>
     <class>domain.CompanyRelationship</class>
     <class>domain.CompanyType</class>
-    <class>domain.Companyperson</class>
     <class>domain.Country</class>
     <class>domain.EmergencyContact</class>
     <class>domain.Item</class>
