@@ -2,8 +2,8 @@
 <Context path="/">
     <Resource name="jdbc/oursafetydb" auth="Container" 
         driverClassName="com.mysql.jdbc.Driver"
-        url="jdbc:mysql://oursafetydb.cagee3ch7une.us-west-2.rds.amazonaws.com:3306/oursafetydb" 
-        username="admin" password="password" 
+        url="jdbc:mysql://34.82.138.200:3306/oursafetydb" 
+        username="chelseyc" password="FgZa75BAv56q" 
         maxActive="100" maxIdle="30" maxWait="10000" 
         logAbandoned="true" removeAbandoned="true" 
         removeAbandonedTimeout="60" type="javax.sql.DataSource"/>
