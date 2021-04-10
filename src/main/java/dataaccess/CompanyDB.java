@@ -8,9 +8,7 @@ package dataaccess;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-
 import domain.Company;
-import domain.Logins;
 import javax.persistence.metamodel.SingularAttribute;
 
 /**
@@ -59,7 +57,6 @@ public class CompanyDB {
 
             trans.begin();
             em.persist(comp);
-            //em.merge(user);
             trans.commit();
 
         } catch (Exception ex) {
@@ -114,30 +111,4 @@ public class CompanyDB {
     public Company get(Company companyID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    /**
-     *
-     * public void update(Company comp) throws Exception { EntityManager em =
-     * DBUtil.getEmFactory().createEntityManager(); EntityTransaction trans =
-     * em.getTransaction(); try { trans.begin(); em.merge(comp); trans.commit();
-     *
-     * } catch (Exception ex) { trans.rollback(); } finally { em.close(); }
-     *
-     * }
-     *
-     *
-     * public void delete(Company comp) throws Exception { EntityManager em =
-     * DBUtil.getEmFactory().createEntityManager(); EntityTransaction trans =
-     * em.getTransaction();
-     *
-     * try {
-     *
-     * trans.begin(); em.remove(em.merge(comp)); trans.commit();
-     *
-     * } catch (Exception ex) { trans.rollback();
-     *
-     * } finally { em.close(); }      *
-     * }
-     *
-     */
 }
