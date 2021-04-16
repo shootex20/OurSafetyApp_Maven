@@ -118,6 +118,7 @@ public class EquipmentManagerServlet extends HttpServlet {
             throws ServletException, IOException {
 
         HttpSession session = request.getSession();
+        
 
         String tokenInput = request.getParameter("token");
 
@@ -229,7 +230,7 @@ public class EquipmentManagerServlet extends HttpServlet {
                             doGet(request, response);
                         } else {
                             /*Inserst*/
-                            equip.insert(dateAdded, model, isChargeable, isDepleting, isDepreactiationType, information, serial, datePurchased, comp);
+                            equip.insert(dateAdded, userID, model, isChargeable, isDepleting, isDepreactiationType, information, serial, datePurchased, comp);
                             request.setAttribute("message", "Item added successfully.");
                             doGet(request, response);
                         }

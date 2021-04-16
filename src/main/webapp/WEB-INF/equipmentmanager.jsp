@@ -107,6 +107,7 @@
                         </table>
                     </div>
                     <br>
+                    
                     <input type="hidden" name="selectedType" value="">
                     <input type="hidden" name="token" value="<c:out value="${token}"/>">
                     <input type="submit" id="addbutton" class="btn btn-primary" value="Add Equipment">
@@ -114,6 +115,7 @@
                     <br>
                 </form>
                 <c:if test="${selectedType != null}">
+                <input type="hidden" name="icType" value="<c:out value="${icType}"/>">
                     <form method="post">
                         <input type="hidden" name="token" value="<c:out value="${token}"/>">
                         <div class="responsive">
