@@ -14,6 +14,12 @@ public class AccountService {
     UserDB userDB = new UserDB();
     PasswordStorage ps = new PasswordStorage();
 
+    /**
+     *
+     * @param username
+     * @param password
+     * @return
+     */
     public Logins login(String username, String password) {
 
         try {

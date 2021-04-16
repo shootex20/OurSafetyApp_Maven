@@ -16,6 +16,11 @@ import javax.persistence.EntityTransaction;
  */
 public class LoginDB {
 
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
     public List<Logins> getAll() throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         try {
@@ -28,6 +33,10 @@ public class LoginDB {
 
     }
 
+    /**
+     *
+     * @param user
+     */
     public void delete(Logins user) {
        EntityManager em = DBUtil.getEmFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
@@ -44,6 +53,12 @@ public class LoginDB {
         
        }
 
+    /**
+     *
+     * @param user
+     * @return
+     * @throws Exception
+     */
     public int insert(Logins user) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
@@ -62,6 +77,11 @@ public class LoginDB {
         }
     }
 
+    /**
+     *
+     * @param userID
+     * @return
+     */
     public Logins get(Integer userID) {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
 
@@ -74,6 +94,11 @@ public class LoginDB {
         }
     }
 
+    /**
+     *
+     * @param user
+     * @throws Exception
+     */
     public void update(Logins user) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();

@@ -80,13 +80,27 @@ public class CompanyPerson implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "companyPersonID", fetch = FetchType.EAGER)
     private List<CompanyPersonPhone> companyPersonPhoneList;
 
+    /**
+     *
+     */
     public CompanyPerson() {
     }
 
+    /**
+     *
+     * @param companyPersonID
+     */
     public CompanyPerson(Integer companyPersonID) {
         this.companyPersonID = companyPersonID;
     }
 
+    /**
+     *
+     * @param email
+     * @param isEmployeeActive
+     * @param companyID
+     * @param personID
+     */
     public CompanyPerson(String email, boolean isEmployeeActive, Company companyID, Person personID) {
         this.dateAdded = dateAdded;
         this.email = email;
@@ -95,6 +109,15 @@ public class CompanyPerson implements Serializable {
         this.personID = personID;
     }
 
+    /**
+     *
+     * @param dateAdded
+     * @param userAdded
+     * @param email
+     * @param isEmployeeActive
+     * @param companyID
+     * @param personID
+     */
     public CompanyPerson(Date dateAdded, Integer userAdded, String email, boolean isEmployeeActive, Company companyID, Person personID) {
         this.dateAdded = dateAdded;
         this.userAdded = userAdded;
@@ -104,110 +127,214 @@ public class CompanyPerson implements Serializable {
         this.personID = personID;
     }
 
+    /**
+     *
+     * @return
+     */
     public Integer getCompanyPersonID() {
         return companyPersonID;
     }
 
+    /**
+     *
+     * @param companyPersonID
+     */
     public void setCompanyPersonID(Integer companyPersonID) {
         this.companyPersonID = companyPersonID;
     }
 
+    /**
+     *
+     * @return
+     */
     public Date getDateAdded() {
         return dateAdded;
     }
 
+    /**
+     *
+     * @param dateAdded
+     */
     public void setDateAdded(Date dateAdded) {
         this.dateAdded = dateAdded;
     }
 
+    /**
+     *
+     * @return
+     */
     public Date getDateRemoved() {
         return dateRemoved;
     }
 
+    /**
+     *
+     * @param dateRemoved
+     */
     public void setDateRemoved(Date dateRemoved) {
         this.dateRemoved = dateRemoved;
     }
 
+    /**
+     *
+     * @return
+     */
     public Integer getUserAdded() {
         return userAdded;
     }
 
+    /**
+     *
+     * @param userAdded
+     */
     public void setUserAdded(Integer userAdded) {
         this.userAdded = userAdded;
     }
 
+    /**
+     *
+     * @return
+     */
     public Integer getUserRemoved() {
         return userRemoved;
     }
 
+    /**
+     *
+     * @param userRemoved
+     */
     public void setUserRemoved(Integer userRemoved) {
         this.userRemoved = userRemoved;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     *
+     * @param email
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean getIsEmployeeActive() {
         return isEmployeeActive;
     }
 
+    /**
+     *
+     * @param isEmployeeActive
+     */
     public void setIsEmployeeActive(boolean isEmployeeActive) {
         this.isEmployeeActive = isEmployeeActive;
     }
 
+    /**
+     *
+     * @return
+     */
     @XmlTransient
     public List<CompanyPersonAddress> getCompanyPersonAddressList() {
         return companyPersonAddressList;
     }
 
+    /**
+     *
+     * @param companyPersonAddressList
+     */
     public void setCompanyPersonAddressList(List<CompanyPersonAddress> companyPersonAddressList) {
         this.companyPersonAddressList = companyPersonAddressList;
     }
 
+    /**
+     *
+     * @return
+     */
     @XmlTransient
     public List<CompanyPositions> getCompanyPositionsList() {
         return companyPositionsList;
     }
 
+    /**
+     *
+     * @param companyPositionsList
+     */
     public void setCompanyPositionsList(List<CompanyPositions> companyPositionsList) {
         this.companyPositionsList = companyPositionsList;
     }
 
+    /**
+     *
+     * @return
+     */
     @XmlTransient
     public List<CompanyNotes> getCompanyNotesList() {
         return companyNotesList;
     }
 
+    /**
+     *
+     * @param companyNotesList
+     */
     public void setCompanyNotesList(List<CompanyNotes> companyNotesList) {
         this.companyNotesList = companyNotesList;
     }
 
+    /**
+     *
+     * @return
+     */
     public Company getCompanyID() {
         return companyID;
     }
 
+    /**
+     *
+     * @param companyID
+     */
     public void setCompanyID(Company companyID) {
         this.companyID = companyID;
     }
 
+    /**
+     *
+     * @return
+     */
     public Person getPersonID() {
         return personID;
     }
 
+    /**
+     *
+     * @param personID
+     */
     public void setPersonID(Person personID) {
         this.personID = personID;
     }
 
+    /**
+     *
+     * @return
+     */
     @XmlTransient
     public List<CompanyPersonPhone> getCompanyPersonPhoneList() {
         return companyPersonPhoneList;
     }
 
+    /**
+     *
+     * @param companyPersonPhoneList
+     */
     public void setCompanyPersonPhoneList(List<CompanyPersonPhone> companyPersonPhoneList) {
         this.companyPersonPhoneList = companyPersonPhoneList;
     }

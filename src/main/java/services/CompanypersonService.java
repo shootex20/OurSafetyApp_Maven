@@ -19,14 +19,30 @@ import java.util.List;
  */
 public class CompanypersonService {
     
-        public void update(CompanyPerson personID, String email) throws Exception {
+    /**
+     *
+     * @param personID
+     * @param email
+     * @throws Exception
+     */
+    public void update(CompanyPerson personID, String email) throws Exception {
         CompanypersonDB compPerDB = new CompanypersonDB();
         CompanyPerson compPersEdit = compPerDB.get(personID.getCompanyPersonID());
         compPersEdit.setEmail(email);
         compPerDB.update(compPersEdit);
     }
         
-        public CompanyPerson insert(Integer userAdded, String email, boolean isEmployeeActive, Company companyID, Person personID) throws Exception {
+    /**
+     *
+     * @param userAdded
+     * @param email
+     * @param isEmployeeActive
+     * @param companyID
+     * @param personID
+     * @return
+     * @throws Exception
+     */
+    public CompanyPerson insert(Integer userAdded, String email, boolean isEmployeeActive, Company companyID, Person personID) throws Exception {
         CompanypersonDB addDB = new CompanypersonDB();
         
         Date dateAdded = new Date();
@@ -40,7 +56,13 @@ public class CompanypersonService {
         return add;
     }
         
-        public void link(CompanyPerson personID, String email) throws Exception {
+    /**
+     *
+     * @param personID
+     * @param email
+     * @throws Exception
+     */
+    public void link(CompanyPerson personID, String email) throws Exception {
         CompanypersonDB compPerDB = new CompanypersonDB();
         CompanyPerson compPersEdit = compPerDB.get(personID.getCompanyPersonID());
         compPersEdit.setEmail(email);

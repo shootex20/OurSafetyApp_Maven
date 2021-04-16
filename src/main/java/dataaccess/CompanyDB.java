@@ -37,6 +37,11 @@ public class CompanyDB {
         }
     }
 
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
     public List<Company> getAll() throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
 
@@ -50,6 +55,12 @@ public class CompanyDB {
 
     }
 
+    /**
+     *
+     * @param comp
+     * @return
+     * @throws Exception
+     */
     public int insert(Company comp) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
@@ -67,6 +78,12 @@ public class CompanyDB {
         }
     }
 
+    /**
+     *
+     * @param comp
+     * @return
+     * @throws Exception
+     */
     public int update(Company comp) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
@@ -84,6 +101,12 @@ public class CompanyDB {
 
     }
 
+    /**
+     *
+     * @param comp
+     * @return
+     * @throws Exception
+     */
     public int delete(Company comp) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
@@ -104,10 +127,20 @@ public class CompanyDB {
 
     }
 
+    /**
+     *
+     * @param companyID
+     * @return
+     */
     public Company get(SingularAttribute<Company, Integer> companyID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @param companyID
+     * @return
+     */
     public Company get(Company companyID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

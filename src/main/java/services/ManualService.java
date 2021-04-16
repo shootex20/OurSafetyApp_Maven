@@ -18,18 +18,43 @@ import java.util.List;
 public class ManualService {
     ManualDB manualDB;
     
+    /**
+     *
+     */
     public ManualService(){
         manualDB = new ManualDB();
     }
     
+    /**
+     *
+     * @param manualID
+     * @return
+     * @throws Exception
+     */
     public Manual get(int manualID) throws Exception{
         return manualDB.get(manualID);
     }
     
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
     public List<Manual> getAll() throws Exception {
         return manualDB.getAll();
     }
       
+    /**
+     *
+     * @param manualID
+     * @param dateAdded
+     * @param userAdded
+     * @param typeLibraryID
+     * @param title
+     * @param intention
+     * @param content
+     * @throws Exception
+     */
     public void update(int manualID, Date dateAdded, int userAdded,TypeLibrary typeLibraryID, String title, String intention, String content) throws Exception{
          Manual manual =  manualDB.get(manualID);
          manual.setDateAdded(dateAdded);
@@ -42,11 +67,26 @@ public class ManualService {
          manualDB.update(manual);
       }
       
+    /**
+     *
+     * @param manualID
+     * @throws Exception
+     */
     public void delete(int manualID) throws Exception {
         Manual deleteManual = manualDB.get(manualID);
         manualDB.delete(deleteManual);
     }
       
+    /**
+     *
+     * @param dateAdded
+     * @param userAdded
+     * @param typeLibraryID
+     * @param title
+     * @param intention
+     * @param content
+     * @throws Exception
+     */
     public void insert(Date dateAdded, int userAdded,TypeLibrary typeLibraryID, String title, String intention, String content) throws Exception {  
         
         Manual manual = new Manual();

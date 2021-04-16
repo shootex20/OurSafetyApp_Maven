@@ -62,65 +62,128 @@ public class CompanyType implements Serializable {
     @ManyToOne(fetch = FetchType.EAGER)
     private TypeLibrary typeLibraryID;
 
+    /**
+     *
+     */
     public CompanyType() {
     }
 
+    /**
+     *
+     * @param companyTypeID
+     */
     public CompanyType(Integer companyTypeID) {
         this.companyTypeID = companyTypeID;
     }
 
+    /**
+     *
+     * @return
+     */
     public Integer getCompanyTypeID() {
         return companyTypeID;
     }
 
+    /**
+     *
+     * @param companyTypeID
+     */
     public void setCompanyTypeID(Integer companyTypeID) {
         this.companyTypeID = companyTypeID;
     }
 
+    /**
+     *
+     * @return
+     */
     public Date getDateAdded() {
         return dateAdded;
     }
 
+    /**
+     *
+     * @param dateAdded
+     */
     public void setDateAdded(Date dateAdded) {
         this.dateAdded = dateAdded;
     }
 
+    /**
+     *
+     * @return
+     */
     public Date getDateRemoved() {
         return dateRemoved;
     }
 
+    /**
+     *
+     * @param dateRemoved
+     */
     public void setDateRemoved(Date dateRemoved) {
         this.dateRemoved = dateRemoved;
     }
 
+    /**
+     *
+     * @return
+     */
     public Integer getUserAdded() {
         return userAdded;
     }
 
+    /**
+     *
+     * @param userAdded
+     */
     public void setUserAdded(Integer userAdded) {
         this.userAdded = userAdded;
     }
 
+    /**
+     *
+     * @return
+     */
     public Integer getUserRemoved() {
         return userRemoved;
     }
 
+    /**
+     *
+     * @param userRemoved
+     */
     public void setUserRemoved(Integer userRemoved) {
         this.userRemoved = userRemoved;
     }
 
+    /**
+     *
+     * @return
+     */
     public Company getCompanyID() {
         return companyID;
     }
 
+    /**
+     *
+     * @param companyID
+     */
     public void setCompanyID(Company companyID) {
         this.companyID = companyID;
     }
 
+    /**
+     *
+     * @return
+     */
     public TypeLibrary getTypeLibraryID() {
         return typeLibraryID;
     }
 
+    /**
+     *
+     * @param typeLibraryID
+     */
     public void setTypeLibraryID(TypeLibrary typeLibraryID) {
         this.typeLibraryID = typeLibraryID;
     }

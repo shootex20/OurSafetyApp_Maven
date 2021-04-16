@@ -19,49 +19,124 @@ import java.util.Base64;
  */
 public class PasswordStorage {
 
+    /**
+     *
+     */
     @SuppressWarnings("serial")
     static public class InvalidHashException extends Exception {
 
+        /**
+         *
+         * @param message
+         */
         public InvalidHashException(String message) {
             super(message);
         }
 
+        /**
+         *
+         * @param message
+         * @param source
+         */
         public InvalidHashException(String message, Throwable source) {
             super(message, source);
         }
     }
 
+    /**
+     *
+     */
     @SuppressWarnings("serial")
     static public class CannotPerformOperationException extends Exception {
 
+        /**
+         *
+         * @param message
+         */
         public CannotPerformOperationException(String message) {
             super(message);
         }
 
+        /**
+         *
+         * @param message
+         * @param source
+         */
         public CannotPerformOperationException(String message, Throwable source) {
             super(message, source);
         }
     }
 
+    /**
+     *
+     */
     public static final String PBKDF2_ALGORITHM = "PBKDF2WithHmacSHA1";
 
     // These constants may be changed without breaking existing hashes.
+
+    /**
+     *
+     */
     public static final int SALT_BYTE_SIZE = 24;
+
+    /**
+     *
+     */
     public static final int HASH_BYTE_SIZE = 18;
+
+    /**
+     *
+     */
     public static final int PBKDF2_ITERATIONS = 64000;
 
     // These constants define the encoding and may not be changed.
+
+    /**
+     *
+     */
     public static final int HASH_SECTIONS = 5;
+
+    /**
+     *
+     */
     public static final int HASH_ALGORITHM_INDEX = 0;
+
+    /**
+     *
+     */
     public static final int ITERATION_INDEX = 1;
+
+    /**
+     *
+     */
     public static final int HASH_SIZE_INDEX = 2;
+
+    /**
+     *
+     */
     public static final int SALT_INDEX = 3;
+
+    /**
+     *
+     */
     public static final int PBKDF2_INDEX = 4;
 
+    /**
+     *
+     * @param password
+     * @return
+     * @throws CannotPerformOperationException
+     */
     public static String createHash(String password) throws CannotPerformOperationException {
         return createHash(password.toCharArray());
     }
 
+    /**
+     *
+     * @param password
+     * @return
+     * @throws CannotPerformOperationException
+     */
     public static String createHash(char[] password) throws CannotPerformOperationException {
         // Generate a random salt
         SecureRandom random = new SecureRandom();
@@ -78,10 +153,26 @@ public class PasswordStorage {
         return parts;
     }
 
+    /**
+     *
+     * @param password
+     * @param correctHash
+     * @return
+     * @throws CannotPerformOperationException
+     * @throws InvalidHashException
+     */
     public boolean verifyPassword(String password, String correctHash) throws CannotPerformOperationException, InvalidHashException {
         return verifyPassword(password.toCharArray(), correctHash);
     }
 
+    /**
+     *
+     * @param password
+     * @param correctHash
+     * @return
+     * @throws CannotPerformOperationException
+     * @throws InvalidHashException
+     */
     public boolean verifyPassword(char[] password, String correctHash) throws CannotPerformOperationException, InvalidHashException {
         // Decode the hash into its parameters
         String[] params = correctHash.split(":");
@@ -167,11 +258,20 @@ public class PasswordStorage {
         return Base64.getEncoder().encodeToString(array);
     }
 
+    /**
+     *
+     * @return
+     */
     public String newRandomPassword() {
         String temporary = Long.toHexString(Double.doubleToLongBits(Math.random()));
         return temporary;
     }
 
+    /**
+     *
+     * @param username
+     * @throws Exception
+     */
     public void passwordReset(String username) throws Exception {
 
         UserDB udb = new UserDB();

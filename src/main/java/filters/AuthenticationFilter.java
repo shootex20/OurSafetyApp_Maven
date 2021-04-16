@@ -14,8 +14,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+/**
+ *
+ * @author Chels
+ */
 public class AuthenticationFilter implements Filter {
 
+    /**
+     *
+     * @param request
+     * @param response
+     * @param chain
+     * @throws IOException
+     * @throws ServletException
+     */
     @Override
     public void doFilter(ServletRequest request, ServletResponse response,
             FilterChain chain)
@@ -36,10 +48,18 @@ public class AuthenticationFilter implements Filter {
         // code that is executed after the servlet  
     }
 
+    /**
+     *
+     * @param filterConfig
+     * @throws ServletException
+     */
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
     }
 
+    /**
+     *
+     */
     @Override
     public void destroy() {
     }

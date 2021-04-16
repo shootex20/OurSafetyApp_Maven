@@ -17,8 +17,12 @@ import domain.ItemClass;
  */
 public class ItemClassDB {
 
-
- 
+    /**
+     *
+     * @param id
+     * @return
+     * @throws Exception
+     */
     public ItemClass get(int id) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         
@@ -30,7 +34,12 @@ public class ItemClassDB {
         }
     }
     
-         public List<ItemClass> getAll() throws Exception {
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
+    public List<ItemClass> getAll() throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         try {
             List<ItemClass> item = em.createNamedQuery("ItemClass.findAll", ItemClass.class).getResultList();

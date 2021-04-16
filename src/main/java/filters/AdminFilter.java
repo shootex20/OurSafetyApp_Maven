@@ -9,8 +9,20 @@ import java.io.IOException;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
+/**
+ *
+ * @author Chels
+ */
 public class AdminFilter implements Filter {
 
+    /**
+     *
+     * @param request
+     * @param response
+     * @param chain
+     * @throws IOException
+     * @throws ServletException
+     */
     @Override
     public void doFilter(ServletRequest request, ServletResponse response,
             FilterChain chain)
@@ -32,10 +44,18 @@ public class AdminFilter implements Filter {
         // this code will execute after the servlet
     }
 
+    /**
+     *
+     * @param filterConfig
+     * @throws ServletException
+     */
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
     }
 
+    /**
+     *
+     */
     @Override
     public void destroy() {
     }

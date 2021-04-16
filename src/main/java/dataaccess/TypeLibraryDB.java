@@ -18,7 +18,13 @@ import javax.persistence.TypedQuery;
  */
 public class TypeLibraryDB {
     
-        public TypeLibrary get(int type_ID) throws Exception {
+    /**
+     *
+     * @param type_ID
+     * @return
+     * @throws Exception
+     */
+    public TypeLibrary get(int type_ID) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         
         try {
@@ -29,7 +35,12 @@ public class TypeLibraryDB {
         }
     }
 
-     public List<TypeLibrary> getAll() throws Exception {
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
+    public List<TypeLibrary> getAll() throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         try {
             List<TypeLibrary> comp = em.createNamedQuery("TypeLibrary.findAll", TypeLibrary.class).getResultList();

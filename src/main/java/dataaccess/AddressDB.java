@@ -17,6 +17,12 @@ import javax.persistence.EntityTransaction;
  */
 public class AddressDB {
     
+    /**
+     *
+     * @param address_ID
+     * @return
+     * @throws Exception
+     */
     public Address get(int address_ID) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         
@@ -28,7 +34,13 @@ public class AddressDB {
         }
     }
     
-        public Address insert(Address add) throws Exception {
+    /**
+     *
+     * @param add
+     * @return
+     * @throws Exception
+     */
+    public Address insert(Address add) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
 
@@ -44,6 +56,11 @@ public class AddressDB {
         }
     }
 
+    /**
+     *
+     * @param address
+     * @throws Exception
+     */
     public void update(Address address) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
@@ -59,6 +76,11 @@ public class AddressDB {
         }
     }
 
+    /**
+     *
+     * @param add
+     * @throws Exception
+     */
     public void delete(Address add) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();  
         EntityTransaction trans = em.getTransaction();

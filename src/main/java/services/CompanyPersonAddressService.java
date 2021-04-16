@@ -18,7 +18,15 @@ import java.util.Date;
  */
 public class CompanyPersonAddressService {
     
-        public CompanyPersonAddress insert(Integer userAdded, Address addressID, CompanyPerson companyPersonID) throws Exception {
+    /**
+     *
+     * @param userAdded
+     * @param addressID
+     * @param companyPersonID
+     * @return
+     * @throws Exception
+     */
+    public CompanyPersonAddress insert(Integer userAdded, Address addressID, CompanyPerson companyPersonID) throws Exception {
         CompanyPersonAddressDB addDB = new CompanyPersonAddressDB();
         
         Date dateAdded = new Date();
@@ -32,7 +40,15 @@ public class CompanyPersonAddressService {
         addDB.updatePerson(add);
         return add;
     }
-        public void link (int compAddressID, Address addressID, CompanyPerson companyPersonID) throws Exception {
+
+    /**
+     *
+     * @param compAddressID
+     * @param addressID
+     * @param companyPersonID
+     * @throws Exception
+     */
+    public void link (int compAddressID, Address addressID, CompanyPerson companyPersonID) throws Exception {
         CompanyPersonAddressDB addDB = new CompanyPersonAddressDB();
         CompanyPersonAddress addEdit = addDB.getID(compAddressID);
         addEdit.setCompanyPersonID(companyPersonID);

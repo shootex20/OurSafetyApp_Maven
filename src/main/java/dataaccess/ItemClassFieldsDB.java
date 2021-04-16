@@ -17,6 +17,12 @@ import domain.ItemClassFields;
  */
 public class ItemClassFieldsDB {
     
+    /**
+     *
+     * @param id
+     * @return
+     * @throws Exception
+     */
     public ItemClassFields get(int id) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         
@@ -28,7 +34,11 @@ public class ItemClassFieldsDB {
         }
     }
     
-        
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
     public List<ItemClassFields> getAll() throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         try {

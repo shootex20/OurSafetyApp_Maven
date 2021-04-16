@@ -80,9 +80,21 @@ public class Phone implements Serializable {
     @OneToMany(orphanRemoval=true, mappedBy = "phoneID", fetch = FetchType.EAGER)
     private List<CompanyPersonPhone> companypersonphoneList;
 
+    /**
+     *
+     */
     public Phone() {
     }
     
+    /**
+     *
+     * @param dateAdded
+     * @param userAdded
+     * @param countryCode
+     * @param areaCode
+     * @param localNumber
+     * @param extension
+     */
     public Phone(Date dateAdded, Integer userAdded, String countryCode, String areaCode, String localNumber, String extension) {
         
         this.dateAdded = dateAdded;
@@ -94,95 +106,187 @@ public class Phone implements Serializable {
         
     }
 
+    /**
+     *
+     * @param phoneID
+     */
     public Phone(Integer phoneID) {
         this.phoneID = phoneID;
     }
 
+    /**
+     *
+     * @return
+     */
     public Integer getPhoneID() {
         return phoneID;
     }
 
+    /**
+     *
+     * @param phoneID
+     */
     public void setPhoneID(Integer phoneID) {
         this.phoneID = phoneID;
     }
 
+    /**
+     *
+     * @return
+     */
     public Date getDateAdded() {
         return dateAdded;
     }
 
+    /**
+     *
+     * @param dateAdded
+     */
     public void setDateAdded(Date dateAdded) {
         this.dateAdded = dateAdded;
     }
 
+    /**
+     *
+     * @return
+     */
     public Date getDateRemoved() {
         return dateRemoved;
     }
 
+    /**
+     *
+     * @param dateRemoved
+     */
     public void setDateRemoved(Date dateRemoved) {
         this.dateRemoved = dateRemoved;
     }
 
+    /**
+     *
+     * @return
+     */
     public Integer getUserAdded() {
         return userAdded;
     }
 
+    /**
+     *
+     * @param userAdded
+     */
     public void setUserAdded(Integer userAdded) {
         this.userAdded = userAdded;
     }
 
+    /**
+     *
+     * @return
+     */
     public Integer getUserRemoved() {
         return userRemoved;
     }
 
+    /**
+     *
+     * @param userRemoved
+     */
     public void setUserRemoved(Integer userRemoved) {
         this.userRemoved = userRemoved;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getCountryCode() {
         return countryCode;
     }
 
+    /**
+     *
+     * @param countryCode
+     */
     public void setCountryCode(String countryCode) {
         this.countryCode = countryCode;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getAreaCode() {
         return areaCode;
     }
 
+    /**
+     *
+     * @param areaCode
+     */
     public void setAreaCode(String areaCode) {
         this.areaCode = areaCode;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getLocalNumber() {
         return localNumber;
     }
 
+    /**
+     *
+     * @param localNumber
+     */
     public void setLocalNumber(String localNumber) {
         this.localNumber = localNumber;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getExtension() {
         return extension;
     }
 
+    /**
+     *
+     * @param extension
+     */
     public void setExtension(String extension) {
         this.extension = extension;
     }
 
+    /**
+     *
+     * @return
+     */
     public TypeLibrary getTypeLibraryID() {
         return typeLibraryID;
     }
 
+    /**
+     *
+     * @param typeLibraryID
+     */
     public void setTypeLibraryID(TypeLibrary typeLibraryID) {
         this.typeLibraryID = typeLibraryID;
     }
 
+    /**
+     *
+     * @return
+     */
     @XmlTransient
     public List<CompanyPersonPhone> getCompanypersonphoneList() {
         return companypersonphoneList;
     }
 
+    /**
+     *
+     * @param companypersonphoneList
+     */
     public void setCompanypersonphoneList(List<CompanyPersonPhone> companypersonphoneList) {
         this.companypersonphoneList = companypersonphoneList;
     }
@@ -212,11 +316,19 @@ public class Phone implements Serializable {
         return "domain.Phone[ phoneID=" + phoneID + " ]";
     }
 
+    /**
+     *
+     * @return
+     */
     @XmlTransient
     public List<CompanyPersonPhone> getCompanyPersonPhoneList() {
         return companyPersonPhoneList;
     }
 
+    /**
+     *
+     * @param companyPersonPhoneList
+     */
     public void setCompanyPersonPhoneList(List<CompanyPersonPhone> companyPersonPhoneList) {
         this.companyPersonPhoneList = companyPersonPhoneList;
     }

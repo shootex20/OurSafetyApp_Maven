@@ -79,9 +79,22 @@ public class Person implements Serializable {
     @ManyToOne(fetch = FetchType.EAGER)
     private EmergencyContact emergencyContactID;
 
+    /**
+     *
+     */
     public Person() {
     }
 
+    /**
+     *
+     * @param dateAdded
+     * @param userAdded
+     * @param firstName
+     * @param lastName
+     * @param dateOfBirth
+     * @param gender
+     * @param emergencyContactID
+     */
     public Person(Date dateAdded, Integer userAdded, String firstName, String lastName, Date dateOfBirth, Character gender, EmergencyContact emergencyContactID) {
         this.dateAdded = dateAdded;
         this.userAdded = userAdded;
@@ -92,95 +105,187 @@ public class Person implements Serializable {
         this.emergencyContactID = emergencyContactID;
     }
 
+    /**
+     *
+     * @param personID
+     */
     public Person(Integer personID) {
         this.personID = personID;
     }
 
+    /**
+     *
+     * @return
+     */
     public Integer getPersonID() {
         return personID;
     }
 
+    /**
+     *
+     * @param personID
+     */
     public void setPersonID(Integer personID) {
         this.personID = personID;
     }
 
+    /**
+     *
+     * @return
+     */
     public Date getDateAdded() {
         return dateAdded;
     }
 
+    /**
+     *
+     * @param dateAdded
+     */
     public void setDateAdded(Date dateAdded) {
         this.dateAdded = dateAdded;
     }
 
+    /**
+     *
+     * @return
+     */
     public Date getDateRemoved() {
         return dateRemoved;
     }
 
+    /**
+     *
+     * @param dateRemoved
+     */
     public void setDateRemoved(Date dateRemoved) {
         this.dateRemoved = dateRemoved;
     }
 
+    /**
+     *
+     * @return
+     */
     public Integer getUserAdded() {
         return userAdded;
     }
 
+    /**
+     *
+     * @param userAdded
+     */
     public void setUserAdded(Integer userAdded) {
         this.userAdded = userAdded;
     }
 
+    /**
+     *
+     * @return
+     */
     public Integer getUserRemoved() {
         return userRemoved;
     }
 
+    /**
+     *
+     * @param userRemoved
+     */
     public void setUserRemoved(Integer userRemoved) {
         this.userRemoved = userRemoved;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     *
+     * @param firstName
+     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getLastName() {
         return lastName;
     }
 
+    /**
+     *
+     * @param lastName
+     */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
+    /**
+     *
+     * @return
+     */
     public Date getDateOfBirth() {
         return dateOfBirth;
     }
 
+    /**
+     *
+     * @param dateOfBirth
+     */
     public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
+    /**
+     *
+     * @return
+     */
     public Character getGender() {
         return gender;
     }
 
+    /**
+     *
+     * @param gender
+     */
     public void setGender(Character gender) {
         this.gender = gender;
     }
 
+    /**
+     *
+     * @return
+     */
     @XmlTransient
     public List<CompanyPerson> getCompanyPersonList() {
         return companyPersonList;
     }
 
+    /**
+     *
+     * @param companyPersonList
+     */
     public void setCompanyPersonList(List<CompanyPerson> companyPersonList) {
         this.companyPersonList = companyPersonList;
     }
 
+    /**
+     *
+     * @return
+     */
     public EmergencyContact getEmergencyContactID() {
         return emergencyContactID;
     }
 
+    /**
+     *
+     * @param emergencyContactID
+     */
     public void setEmergencyContactID(EmergencyContact emergencyContactID) {
         this.emergencyContactID = emergencyContactID;
     }

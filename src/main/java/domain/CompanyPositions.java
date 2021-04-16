@@ -65,13 +65,28 @@ public class CompanyPositions implements Serializable {
     @ManyToOne(fetch = FetchType.EAGER)
     private Company companyID;
 
+    /**
+     *
+     */
     public CompanyPositions() {
     }
 
+    /**
+     *
+     * @param companyPositionsID
+     */
     public CompanyPositions(Integer companyPositionsID) {
         this.companyPositionsID = companyPositionsID;
     }
     
+    /**
+     *
+     * @param dateAdded
+     * @param userAdded
+     * @param positionTitle
+     * @param companyPersonID
+     * @param companyID
+     */
     public CompanyPositions(Date dateAdded, Integer userAdded, String positionTitle, CompanyPerson companyPersonID, Company companyID) {
         
         this.dateAdded = dateAdded;
@@ -81,66 +96,130 @@ public class CompanyPositions implements Serializable {
         this.companyID = companyID; 
     }
     
+    /**
+     *
+     * @return
+     */
     public Integer getCompanyPositionsID() {
         return companyPositionsID;
     }
 
+    /**
+     *
+     * @param companyPositionsID
+     */
     public void setCompanyPositionsID(Integer companyPositionsID) {
         this.companyPositionsID = companyPositionsID;
     }
 
+    /**
+     *
+     * @return
+     */
     public Date getDateAdded() {
         return dateAdded;
     }
 
+    /**
+     *
+     * @param dateAdded
+     */
     public void setDateAdded(Date dateAdded) {
         this.dateAdded = dateAdded;
     }
 
+    /**
+     *
+     * @return
+     */
     public Date getDateRemoved() {
         return dateRemoved;
     }
 
+    /**
+     *
+     * @param dateRemoved
+     */
     public void setDateRemoved(Date dateRemoved) {
         this.dateRemoved = dateRemoved;
     }
 
+    /**
+     *
+     * @return
+     */
     public Integer getUserAdded() {
         return userAdded;
     }
 
+    /**
+     *
+     * @param userAdded
+     */
     public void setUserAdded(Integer userAdded) {
         this.userAdded = userAdded;
     }
 
+    /**
+     *
+     * @return
+     */
     public Integer getUserRemoved() {
         return userRemoved;
     }
 
+    /**
+     *
+     * @param userRemoved
+     */
     public void setUserRemoved(Integer userRemoved) {
         this.userRemoved = userRemoved;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getPositionTitle() {
         return positionTitle;
     }
 
+    /**
+     *
+     * @param positionTitle
+     */
     public void setPositionTitle(String positionTitle) {
         this.positionTitle = positionTitle;
     }
 
+    /**
+     *
+     * @return
+     */
     public CompanyPerson getCompanyPersonID() {
         return companyPersonID;
     }
 
+    /**
+     *
+     * @param companyPersonID
+     */
     public void setCompanyPersonID(CompanyPerson companyPersonID) {
         this.companyPersonID = companyPersonID;
     }
 
+    /**
+     *
+     * @return
+     */
     public Company getCompanyID() {
         return companyID;
     }
 
+    /**
+     *
+     * @param companyID
+     */
     public void setCompanyID(Company companyID) {
         this.companyID = companyID;
     }

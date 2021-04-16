@@ -25,13 +25,29 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+/**
+ *
+ * @author Chels
+ */
 public class EmailService {
     
+    /**
+     *
+     */
     public EmailService(){
     
     }
     
     // Send a template email
+
+    /**
+     *
+     * @param to
+     * @param subject
+     * @param template
+     * @param tags
+     * @throws Exception
+     */
     public void sendMail(String to, String subject, String template, HashMap<String, String> tags) throws Exception {
         // {{firstname}} -> Anne
         // {{date}} -> Oct. 28
@@ -59,6 +75,16 @@ public class EmailService {
     }
 
     // Send a simple email
+
+    /**
+     *
+     * @param to
+     * @param subject
+     * @param body
+     * @param bodyIsHTML
+     * @throws MessagingException
+     * @throws NamingException
+     */
     public void sendMail(String to, String subject, String body, boolean bodyIsHTML) throws MessagingException, NamingException {
         Context env = (Context) new InitialContext().lookup("java:comp/env");
         String username = (String) env.lookup("webmail-username");
@@ -94,6 +120,16 @@ public class EmailService {
         transport.close();
     }
     
+    /**
+     *
+     * @param to
+     * @param subject
+     * @param body
+     * @param filePath
+     * @param bodyIsHTML
+     * @throws MessagingException
+     * @throws NamingException
+     */
     public void sendMailWithAttachments(String to, String subject, String body, String filePath, boolean bodyIsHTML) throws MessagingException, NamingException {
         Context env = (Context) new InitialContext().lookup("java:comp/env");
         String username = (String) env.lookup("webmail-username");

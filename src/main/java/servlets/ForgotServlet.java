@@ -9,8 +9,19 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import services.PasswordStorage;
 
+/**
+ *
+ * @author Chels
+ */
 public class ForgotServlet extends HttpServlet {
 
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -31,6 +42,13 @@ public class ForgotServlet extends HttpServlet {
         return;
     }
 
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

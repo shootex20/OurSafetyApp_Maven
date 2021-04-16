@@ -22,39 +22,77 @@ public class LoginService {
     private LoginDB loginDB;
     private CompanyDB companyDB;
 
+    /**
+     *
+     */
     public LoginService() {
         loginDB = new LoginDB();
     }
 
+    /**
+     *
+     * @param userID
+     * @return
+     * @throws Exception
+     */
     public Logins get(Integer userID) throws Exception {
         return loginDB.get(userID);
     }
 
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
     public List<Logins> getAll() throws Exception {
         return loginDB.getAll();
     }
 
+    /**
+     *
+     * @param dateAdded
+     * @param username
+     * @param password
+     * @param companyID
+     * @param isActive
+     * @param isAdmin
+     * @return
+     * @throws Exception
+     */
     public int insert(Date dateAdded, String username, String password, Company companyID, Character isActive, Character isAdmin) throws Exception {
         Logins user = new Logins(dateAdded, username, password, companyID, isActive, isAdmin);
         return loginDB.insert(user);
     }
 
-  
-     public void delete(Logins userID, String username) throws Exception {
+    /**
+     *
+     * @param userID
+     * @param username
+     * @throws Exception
+     */
+    public void delete(Logins userID, String username) throws Exception {
       Logins person = userID;
       person.setUsername(username);
         loginDB.delete(person);  
         
     }
 
-    
-    
-
+    /**
+     *
+     * @param categoryID
+     * @return
+     * @throws Exception
+     */
     public Company getCompanyID(int categoryID) throws Exception {
         return companyDB.get(categoryID);
 
     }
 
+    /**
+     *
+     * @param userName
+     * @param tempPassword
+     */
     public void updatePassword(String userName, String tempPassword) {
 
         UserDB udb = new UserDB();
