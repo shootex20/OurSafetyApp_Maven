@@ -10,17 +10,20 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class ManualDB.
  *
  * @author 813033
  */
 public class ManualDB {
     
     /**
+     * Gets the.
      *
-     * @param id
-     * @return
-     * @throws Exception
+     * @param id the id
+     * @return the manual
+     * @throws Exception the exception
      */
     public Manual get(int id) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -34,9 +37,10 @@ public class ManualDB {
     }
     
     /**
+     * Gets the all.
      *
-     * @return
-     * @throws Exception
+     * @return the all
+     * @throws Exception the exception
      */
     public List<Manual> getAll() throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -50,9 +54,10 @@ public class ManualDB {
     }
     
     /**
+     * Insert.
      *
-     * @param manual
-     * @throws Exception
+     * @param manual the manual
+     * @throws Exception the exception
      */
     public void insert(Manual manual) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -70,9 +75,10 @@ public class ManualDB {
     }
 
     /**
+     * Delete.
      *
-     * @param manual
-     * @throws Exception
+     * @param manual the manual
+     * @throws Exception the exception
      */
     public void delete(Manual manual) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();  
@@ -89,9 +95,10 @@ public class ManualDB {
     }
             
     /**
+     * Update.
      *
-     * @param manual
-     * @throws Exception
+     * @param manual the manual
+     * @throws Exception the exception
      */
     public void update(Manual manual) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();

@@ -11,17 +11,20 @@ import domain.ItemClassFields;
 
 
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class ItemClassFieldsDB.
  *
  * @author 813017
  */
 public class ItemClassFieldsDB {
     
     /**
+     * Gets the.
      *
-     * @param id
-     * @return
-     * @throws Exception
+     * @param id the id
+     * @return the item class fields
+     * @throws Exception the exception
      */
     public ItemClassFields get(int id) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -35,9 +38,10 @@ public class ItemClassFieldsDB {
     }
     
     /**
+     * Gets the all.
      *
-     * @return
-     * @throws Exception
+     * @return the all
+     * @throws Exception the exception
      */
     public List<ItemClassFields> getAll() throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();

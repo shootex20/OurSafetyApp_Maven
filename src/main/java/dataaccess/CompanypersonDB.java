@@ -13,17 +13,20 @@ import domain.CompanyPerson;
 import domain.Person;
 import javax.persistence.TypedQuery;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class CompanypersonDB.
  *
  * @author Chelsey Coughlin
  */
 public class CompanypersonDB {
 
     /**
+     * Gets the all.
      *
-     * @param companyID
-     * @return
-     * @throws Exception
+     * @param companyID the company ID
+     * @return the all
+     * @throws Exception the exception
      */
     public List<CompanyPerson> getAll(Company companyID) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -37,10 +40,11 @@ public class CompanypersonDB {
     }
 
     /**
+     * Gets the.
      *
-     * @param person_ID
-     * @return
-     * @throws Exception
+     * @param person_ID the person ID
+     * @return the company person
+     * @throws Exception the exception
      */
     public CompanyPerson get(int person_ID) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -54,11 +58,12 @@ public class CompanypersonDB {
     }
 
     /**
+     * Gets the by fields.
      *
-     * @param company_ID
-     * @param person_ID
-     * @param email
-     * @return
+     * @param company_ID the company ID
+     * @param person_ID the person ID
+     * @param email the email
+     * @return the by fields
      */
     public CompanyPerson getByFields(int company_ID, int person_ID, String email) {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -71,9 +76,10 @@ public class CompanypersonDB {
     }
 
     /**
+     * Update.
      *
-     * @param comp
-     * @throws Exception
+     * @param comp the comp
+     * @throws Exception the exception
      */
     public void update(CompanyPerson comp) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -91,10 +97,11 @@ public class CompanypersonDB {
     }
 
     /**
+     * Insert.
      *
-     * @param add
-     * @return
-     * @throws Exception
+     * @param add the add
+     * @return the company person
+     * @throws Exception the exception
      */
     public CompanyPerson insert(CompanyPerson add) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();

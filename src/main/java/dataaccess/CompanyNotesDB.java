@@ -13,16 +13,19 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class CompanyNotesDB.
  *
  * @author Chelsey Coughlin
  */
 public class CompanyNotesDB {
     
     /**
+     * Gets the all.
      *
-     * @return
-     * @throws Exception
+     * @return the all
+     * @throws Exception the exception
      */
     public List<CompanyNotes> getAll() throws Exception {
          EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -32,10 +35,11 @@ public class CompanyNotesDB {
     }
    
     /**
+     * Gets the.
      *
-     * @param compNotesID
-     * @return
-     * @throws Exception
+     * @param compNotesID the comp notes ID
+     * @return the company notes
+     * @throws Exception the exception
      */
     public CompanyNotes get(int compNotesID) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -49,9 +53,10 @@ public class CompanyNotesDB {
     }
 
     /**
+     * Insert.
      *
-     * @param note
-     * @throws Exception
+     * @param note the note
+     * @throws Exception the exception
      */
     public void insert(CompanyNotes note) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -69,9 +74,10 @@ public class CompanyNotesDB {
     }
 
     /**
+     * Update.
      *
-     * @param note
-     * @throws Exception
+     * @param note the note
+     * @throws Exception the exception
      */
     public void update(CompanyNotes note) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -89,9 +95,10 @@ public class CompanyNotesDB {
     }
 
     /**
+     * Delete.
      *
-     * @param note
-     * @throws Exception
+     * @param note the note
+     * @throws Exception the exception
      */
     public void delete(CompanyNotes note) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();  

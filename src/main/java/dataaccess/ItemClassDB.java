@@ -11,17 +11,20 @@ import domain.ItemClass;
 
 
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class ItemClassDB.
  *
  * @author 813017
  */
 public class ItemClassDB {
 
     /**
+     * Gets the.
      *
-     * @param id
-     * @return
-     * @throws Exception
+     * @param id the id
+     * @return the item class
+     * @throws Exception the exception
      */
     public ItemClass get(int id) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -35,9 +38,10 @@ public class ItemClassDB {
     }
     
     /**
+     * Gets the all.
      *
-     * @return
-     * @throws Exception
+     * @return the all
+     * @throws Exception the exception
      */
     public List<ItemClass> getAll() throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();

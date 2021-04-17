@@ -14,17 +14,20 @@ import javax.persistence.EntityTransaction;
 import servlets.EmployeeServlet;
 
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class CompanyPersonPhoneDB.
  *
  * @author Chelsey Coughlin
  */
 public class CompanyPersonPhoneDB {
 
     /**
+     * Gets the all.
      *
-     * @param companyper_ID
-     * @return
-     * @throws Exception
+     * @param companyper_ID the companyper ID
+     * @return the all
+     * @throws Exception the exception
      */
     public List<CompanyPersonPhone> getAll(int companyper_ID) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -37,10 +40,11 @@ public class CompanyPersonPhoneDB {
     }
         
     /**
+     * Gets the.
      *
-     * @param compPerson
-     * @return
-     * @throws Exception
+     * @param compPerson the comp person
+     * @return the company person phone
+     * @throws Exception the exception
      */
     public CompanyPersonPhone get(CompanyPerson compPerson) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -53,10 +57,11 @@ public class CompanyPersonPhoneDB {
     }
         
     /**
+     * Gets the id.
      *
-     * @param phoneID
-     * @return
-     * @throws Exception
+     * @param phoneID the phone ID
+     * @return the id
+     * @throws Exception the exception
      */
     public CompanyPersonPhone getID(int phoneID) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -70,9 +75,10 @@ public class CompanyPersonPhoneDB {
     }
       
     /**
+     * Update.
      *
-     * @param comp
-     * @throws Exception
+     * @param comp the comp
+     * @throws Exception the exception
      */
     public void update(CompanyPersonPhone comp) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -91,10 +97,11 @@ public class CompanyPersonPhoneDB {
     }
         
     /**
+     * Insert.
      *
-     * @param add
-     * @return
-     * @throws Exception
+     * @param add the add
+     * @return the company person phone
+     * @throws Exception the exception
      */
     public CompanyPersonPhone insert(CompanyPersonPhone add) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -116,9 +123,10 @@ public class CompanyPersonPhoneDB {
     }
         
     /**
+     * Update person.
      *
-     * @param add
-     * @throws Exception
+     * @param add the add
+     * @throws Exception the exception
      */
     public void updatePerson (CompanyPersonPhone add) throws Exception
         {
@@ -159,10 +167,11 @@ public class CompanyPersonPhoneDB {
         */
 
     /**
-     *
-     * @param add
-     * @throws Exception
-     */
+         * Delete.
+         *
+         * @param add the add
+         * @throws Exception the exception
+         */
     public void delete(CompanyPersonPhone add) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();  
         EntityTransaction trans = em.getTransaction();

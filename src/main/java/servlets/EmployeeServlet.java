@@ -37,18 +37,21 @@ import services.EmergencyContactService;
 import services.PersonService;
 import services.PhoneService;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class EmployeeServlet.
  *
  * @author 809968
  */
 public class EmployeeServlet extends HttpServlet {
 
     /**
+     * Do get.
      *
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
+     * @param request the request
+     * @param response the response
+     * @throws ServletException the servlet exception
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -179,11 +182,12 @@ public class EmployeeServlet extends HttpServlet {
     }
 
     /**
+     * Do post.
      *
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
+     * @param request the request
+     * @param response the response
+     * @throws ServletException the servlet exception
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

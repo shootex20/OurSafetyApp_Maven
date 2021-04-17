@@ -7,17 +7,20 @@ import domain.Item;
 import java.util.Date;
 import java.util.List;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class Equipment.
  *
  * @author 813017
  */
 public class Equipment {
     
     /**
+     * Gets the.
      *
-     * @param id
-     * @return
-     * @throws Exception
+     * @param id the id
+     * @return the item
+     * @throws Exception the exception
      */
     public Item get(int id) throws Exception {
         ItemDB itemDB = new ItemDB();
@@ -26,10 +29,11 @@ public class Equipment {
     }
     
     /**
+     * Gets the all.
      *
-     * @param comp
-     * @return
-     * @throws Exception
+     * @param comp the comp
+     * @return the all
+     * @throws Exception the exception
      */
     public List<Item> getAll(Company comp) throws Exception {
         ItemDB itemDB = new ItemDB();
@@ -38,18 +42,19 @@ public class Equipment {
     }
     
     /**
+     * Insert.
      *
-     * @param dateAdded
-     * @param userAdded
-     * @param model
-     * @param isChargeableType
-     * @param isDepletingType
-     * @param isDepreactiationType
-     * @param itemClassInformation
-     * @param serialNumber
-     * @param purchase
-     * @param compID
-     * @throws Exception
+     * @param dateAdded the date added
+     * @param userAdded the user added
+     * @param model the model
+     * @param isChargeableType the is chargeable type
+     * @param isDepletingType the is depleting type
+     * @param isDepreactiationType the is depreactiation type
+     * @param itemClassInformation the item class information
+     * @param serialNumber the serial number
+     * @param purchase the purchase
+     * @param compID the comp ID
+     * @throws Exception the exception
      */
     public void insert(Date dateAdded,int userAdded, String model, boolean isChargeableType, 
             boolean isDepletingType, boolean isDepreactiationType, 
@@ -64,9 +69,10 @@ public class Equipment {
     }
     
     /**
+     * Delete.
      *
-     * @param id
-     * @throws Exception
+     * @param id the id
+     * @throws Exception the exception
      */
     public void delete(int id) throws Exception {
         ItemDB itemDB = new ItemDB();

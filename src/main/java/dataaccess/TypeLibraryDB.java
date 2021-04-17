@@ -12,17 +12,20 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class TypeLibraryDB.
  *
  * @author 813017
  */
 public class TypeLibraryDB {
     
     /**
+     * Gets the.
      *
-     * @param type_ID
-     * @return
-     * @throws Exception
+     * @param type_ID the type ID
+     * @return the type library
+     * @throws Exception the exception
      */
     public TypeLibrary get(int type_ID) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -36,9 +39,10 @@ public class TypeLibraryDB {
     }
 
     /**
+     * Gets the all.
      *
-     * @return
-     * @throws Exception
+     * @return the all
+     * @throws Exception the exception
      */
     public List<TypeLibrary> getAll() throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();

@@ -11,7 +11,9 @@ import javax.persistence.EntityTransaction;
 import domain.Company;
 import javax.persistence.metamodel.SingularAttribute;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class CompanyDB.
  *
  * @author 813017, 844817
  */
@@ -22,8 +24,7 @@ public class CompanyDB {
      *
      * @param companyID The unique username.
      * @return A Company object if found, null otherwise.
-     * @throws Exception
-     *
+     * @throws Exception the exception
      */
     public Company get(int companyID) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -38,9 +39,10 @@ public class CompanyDB {
     }
 
     /**
+     * Gets the all.
      *
-     * @return
-     * @throws Exception
+     * @return the all
+     * @throws Exception the exception
      */
     public List<Company> getAll() throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -56,10 +58,11 @@ public class CompanyDB {
     }
 
     /**
+     * Insert.
      *
-     * @param comp
-     * @return
-     * @throws Exception
+     * @param comp the comp
+     * @return the int
+     * @throws Exception the exception
      */
     public int insert(Company comp) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -79,10 +82,11 @@ public class CompanyDB {
     }
 
     /**
+     * Update.
      *
-     * @param comp
-     * @return
-     * @throws Exception
+     * @param comp the comp
+     * @return the int
+     * @throws Exception the exception
      */
     public int update(Company comp) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -102,10 +106,11 @@ public class CompanyDB {
     }
 
     /**
+     * Delete.
      *
-     * @param comp
-     * @return
-     * @throws Exception
+     * @param comp the comp
+     * @return the int
+     * @throws Exception the exception
      */
     public int delete(Company comp) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -128,18 +133,20 @@ public class CompanyDB {
     }
 
     /**
+     * Gets the.
      *
-     * @param companyID
-     * @return
+     * @param companyID the company ID
+     * @return the company
      */
     public Company get(SingularAttribute<Company, Integer> companyID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
+     * Gets the.
      *
-     * @param companyID
-     * @return
+     * @param companyID the company ID
+     * @return the company
      */
     public Company get(Company companyID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

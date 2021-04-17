@@ -9,17 +9,20 @@ import javax.persistence.EntityTransaction;
 import domain.Phone;
 
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class PhoneDB.
  *
  * @author Chelsey Coughlin
  */
 public class PhoneDB {
            
     /**
+     * Gets the.
      *
-     * @param phone_ID
-     * @return
-     * @throws Exception
+     * @param phone_ID the phone ID
+     * @return the phone
+     * @throws Exception the exception
      */
     public Phone get(int phone_ID) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -33,10 +36,11 @@ public class PhoneDB {
     }
     
     /**
+     * Insert.
      *
-     * @param add
-     * @return
-     * @throws Exception
+     * @param add the add
+     * @return the phone
+     * @throws Exception the exception
      */
     public Phone insert(Phone add) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -55,9 +59,10 @@ public class PhoneDB {
     }
 
     /**
+     * Update.
      *
-     * @param phone
-     * @throws Exception
+     * @param phone the phone
+     * @throws Exception the exception
      */
     public void update(Phone phone) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -75,9 +80,10 @@ public class PhoneDB {
     }
 
     /**
+     * Delete.
      *
-     * @param phone
-     * @throws Exception
+     * @param phone the phone
+     * @throws Exception the exception
      */
     public void delete(Phone phone) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();  

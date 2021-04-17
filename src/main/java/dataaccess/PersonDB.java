@@ -14,16 +14,19 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.persistence.Query;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class PersonDB.
  *
  * @author Chelsey Coughlin
  */
 public class PersonDB {
 
     /**
+     * Gets the all.
      *
-     * @return
-     * @throws Exception
+     * @return the all
+     * @throws Exception the exception
      */
     public List<Person> getAll() throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -38,12 +41,13 @@ public class PersonDB {
     }
 
     /**
+     * Gets the with fields.
      *
-     * @param firstName
-     * @param lastName
-     * @param dob
-     * @return
-     * @throws Exception
+     * @param firstName the first name
+     * @param lastName the last name
+     * @param dob the dob
+     * @return the with fields
+     * @throws Exception the exception
      */
     public Person getWithFields(String firstName, String lastName, String dob) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -57,10 +61,11 @@ public class PersonDB {
     }
 
     /**
+     * Gets the.
      *
-     * @param person_ID
-     * @return
-     * @throws Exception
+     * @param person_ID the person ID
+     * @return the person
+     * @throws Exception the exception
      */
     public Person get(int person_ID) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -74,9 +79,10 @@ public class PersonDB {
     }
 
     /**
+     * Update.
      *
-     * @param comp
-     * @throws Exception
+     * @param comp the comp
+     * @throws Exception the exception
      */
     public void update(Person comp) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -95,10 +101,11 @@ public class PersonDB {
     }
 
     /**
+     * Insert.
      *
-     * @param add
-     * @return
-     * @throws Exception
+     * @param add the add
+     * @return the person
+     * @throws Exception the exception
      */
     public Person insert(Person add) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();

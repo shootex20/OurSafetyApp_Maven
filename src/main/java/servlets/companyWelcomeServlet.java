@@ -18,18 +18,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class companyWelcomeServlet.
  *
  * @author 809968
  */
 public class companyWelcomeServlet extends HttpServlet {
 
     /**
+     * Do get.
      *
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
+     * @param request the request
+     * @param response the response
+     * @throws ServletException the servlet exception
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -91,11 +94,12 @@ public class companyWelcomeServlet extends HttpServlet {
     }
 
     /**
+     * Do post.
      *
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
+     * @param request the request
+     * @param response the response
+     * @throws ServletException the servlet exception
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

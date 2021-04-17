@@ -15,14 +15,16 @@ import domain.CompanyPersonAddress;
 import javax.persistence.Query;
 
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class CompanyPersonAddressDB.
  *
  * @author Chelsey Coughlin
  */
 public class CompanyPersonAddressDB {
     
     /**
-     *
+     * Instantiates a new company person address DB.
      */
     public CompanyPersonAddressDB()
     {
@@ -30,10 +32,11 @@ public class CompanyPersonAddressDB {
     }
     
     /**
+     * Gets the all.
      *
-     * @param companyper_ID
-     * @return
-     * @throws Exception
+     * @param companyper_ID the companyper ID
+     * @return the all
+     * @throws Exception the exception
      */
     public List<CompanyPersonAddress> getAll(int companyper_ID) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -46,10 +49,11 @@ public class CompanyPersonAddressDB {
     }
     
     /**
+     * Gets the.
      *
-     * @param compPerson
-     * @return
-     * @throws Exception
+     * @param compPerson the comp person
+     * @return the company person address
+     * @throws Exception the exception
      */
     public CompanyPersonAddress get(CompanyPerson compPerson) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -62,10 +66,11 @@ public class CompanyPersonAddressDB {
     }
         
     /**
+     * Gets the id.
      *
-     * @param address_ID
-     * @return
-     * @throws Exception
+     * @param address_ID the address ID
+     * @return the id
+     * @throws Exception the exception
      */
     public CompanyPersonAddress getID(int address_ID) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -79,9 +84,10 @@ public class CompanyPersonAddressDB {
     }
         
     /**
+     * Update.
      *
-     * @param comp
-     * @throws Exception
+     * @param comp the comp
+     * @throws Exception the exception
      */
     public void update(CompanyPersonAddress comp) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -101,10 +107,11 @@ public class CompanyPersonAddressDB {
     }
     
     /**
+     * Insert.
      *
-     * @param add
-     * @return
-     * @throws Exception
+     * @param add the add
+     * @return the company person address
+     * @throws Exception the exception
      */
     public CompanyPersonAddress insert(CompanyPersonAddress add) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -126,9 +133,10 @@ public class CompanyPersonAddressDB {
     }
         
     /**
+     * Update person.
      *
-     * @param add
-     * @throws Exception
+     * @param add the add
+     * @throws Exception the exception
      */
     public void updatePerson (CompanyPersonAddress add) throws Exception
         {

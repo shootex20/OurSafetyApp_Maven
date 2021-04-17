@@ -25,14 +25,16 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class EmailService.
  *
  * @author Chels
  */
 public class EmailService {
     
     /**
-     *
+     * Instantiates a new email service.
      */
     public EmailService(){
     
@@ -41,12 +43,13 @@ public class EmailService {
     // Send a template email
 
     /**
+     * Send mail.
      *
-     * @param to
-     * @param subject
-     * @param template
-     * @param tags
-     * @throws Exception
+     * @param to the to
+     * @param subject the subject
+     * @param template the template
+     * @param tags the tags
+     * @throws Exception the exception
      */
     public void sendMail(String to, String subject, String template, HashMap<String, String> tags) throws Exception {
         // {{firstname}} -> Anne
@@ -77,13 +80,14 @@ public class EmailService {
     // Send a simple email
 
     /**
+     * Send mail.
      *
-     * @param to
-     * @param subject
-     * @param body
-     * @param bodyIsHTML
-     * @throws MessagingException
-     * @throws NamingException
+     * @param to the to
+     * @param subject the subject
+     * @param body the body
+     * @param bodyIsHTML the body is HTML
+     * @throws MessagingException the messaging exception
+     * @throws NamingException the naming exception
      */
     public void sendMail(String to, String subject, String body, boolean bodyIsHTML) throws MessagingException, NamingException {
         Context env = (Context) new InitialContext().lookup("java:comp/env");
@@ -121,14 +125,15 @@ public class EmailService {
     }
     
     /**
+     * Send mail with attachments.
      *
-     * @param to
-     * @param subject
-     * @param body
-     * @param filePath
-     * @param bodyIsHTML
-     * @throws MessagingException
-     * @throws NamingException
+     * @param to the to
+     * @param subject the subject
+     * @param body the body
+     * @param filePath the file path
+     * @param bodyIsHTML the body is HTML
+     * @throws MessagingException the messaging exception
+     * @throws NamingException the naming exception
      */
     public void sendMailWithAttachments(String to, String subject, String body, String filePath, boolean bodyIsHTML) throws MessagingException, NamingException {
         Context env = (Context) new InitialContext().lookup("java:comp/env");

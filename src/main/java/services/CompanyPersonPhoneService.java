@@ -12,19 +12,22 @@ import domain.Phone;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class CompanyPersonPhoneService.
  *
  * @author Chels
  */
 public class CompanyPersonPhoneService {
     
     /**
+     * Insert.
      *
-     * @param userAdded
-     * @param companyPersonID
-     * @param phoneID
-     * @return
-     * @throws Exception
+     * @param userAdded the user added
+     * @param companyPersonID the company person ID
+     * @param phoneID the phone ID
+     * @return the company person phone
+     * @throws Exception the exception
      */
     public CompanyPersonPhone insert(Integer userAdded, CompanyPerson companyPersonID, Phone phoneID) throws Exception {
         CompanyPersonPhoneDB addDB = new CompanyPersonPhoneDB();

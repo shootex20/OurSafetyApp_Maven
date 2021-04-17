@@ -9,18 +9,21 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import services.PasswordStorage;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class ForgotServlet.
  *
  * @author Chels
  */
 public class ForgotServlet extends HttpServlet {
 
     /**
+     * Do get.
      *
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
+     * @param request the request
+     * @param response the response
+     * @throws ServletException the servlet exception
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -43,11 +46,12 @@ public class ForgotServlet extends HttpServlet {
     }
 
     /**
+     * Do post.
      *
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
+     * @param request the request
+     * @param response the response
+     * @throws ServletException the servlet exception
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

@@ -14,19 +14,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class AuthenticationFilter.
  *
  * @author Chels
  */
 public class AuthenticationFilter implements Filter {
 
     /**
+     * Do filter.
      *
-     * @param request
-     * @param response
-     * @param chain
-     * @throws IOException
-     * @throws ServletException
+     * @param request the request
+     * @param response the response
+     * @param chain the chain
+     * @throws IOException Signals that an I/O exception has occurred.
+     * @throws ServletException the servlet exception
      */
     @Override
     public void doFilter(ServletRequest request, ServletResponse response,
@@ -49,16 +52,17 @@ public class AuthenticationFilter implements Filter {
     }
 
     /**
+     * Inits the.
      *
-     * @param filterConfig
-     * @throws ServletException
+     * @param filterConfig the filter config
+     * @throws ServletException the servlet exception
      */
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
     }
 
     /**
-     *
+     * Destroy.
      */
     @Override
     public void destroy() {

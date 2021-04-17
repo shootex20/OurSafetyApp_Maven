@@ -11,49 +11,56 @@ import domain.TypeLibrary;
 import java.util.Date;
 import java.util.List;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class ManualService.
  *
  * @author 809968
  */
 public class ManualService {
+    
+    /** The manual DB. */
     ManualDB manualDB;
     
     /**
-     *
+     * Instantiates a new manual service.
      */
     public ManualService(){
         manualDB = new ManualDB();
     }
     
     /**
+     * Gets the.
      *
-     * @param manualID
-     * @return
-     * @throws Exception
+     * @param manualID the manual ID
+     * @return the manual
+     * @throws Exception the exception
      */
     public Manual get(int manualID) throws Exception{
         return manualDB.get(manualID);
     }
     
     /**
+     * Gets the all.
      *
-     * @return
-     * @throws Exception
+     * @return the all
+     * @throws Exception the exception
      */
     public List<Manual> getAll() throws Exception {
         return manualDB.getAll();
     }
       
     /**
+     * Update.
      *
-     * @param manualID
-     * @param dateAdded
-     * @param userAdded
-     * @param typeLibraryID
-     * @param title
-     * @param intention
-     * @param content
-     * @throws Exception
+     * @param manualID the manual ID
+     * @param dateAdded the date added
+     * @param userAdded the user added
+     * @param typeLibraryID the type library ID
+     * @param title the title
+     * @param intention the intention
+     * @param content the content
+     * @throws Exception the exception
      */
     public void update(int manualID, Date dateAdded, int userAdded,TypeLibrary typeLibraryID, String title, String intention, String content) throws Exception{
          Manual manual =  manualDB.get(manualID);
@@ -68,9 +75,10 @@ public class ManualService {
       }
       
     /**
+     * Delete.
      *
-     * @param manualID
-     * @throws Exception
+     * @param manualID the manual ID
+     * @throws Exception the exception
      */
     public void delete(int manualID) throws Exception {
         Manual deleteManual = manualDB.get(manualID);
@@ -78,14 +86,15 @@ public class ManualService {
     }
       
     /**
+     * Insert.
      *
-     * @param dateAdded
-     * @param userAdded
-     * @param typeLibraryID
-     * @param title
-     * @param intention
-     * @param content
-     * @throws Exception
+     * @param dateAdded the date added
+     * @param userAdded the user added
+     * @param typeLibraryID the type library ID
+     * @param title the title
+     * @param intention the intention
+     * @param content the content
+     * @throws Exception the exception
      */
     public void insert(Date dateAdded, int userAdded,TypeLibrary typeLibraryID, String title, String intention, String content) throws Exception {  
         

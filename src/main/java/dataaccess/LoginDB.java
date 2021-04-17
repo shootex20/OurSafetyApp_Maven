@@ -10,16 +10,19 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class LoginDB.
  *
  * @author 809968
  */
 public class LoginDB {
 
     /**
+     * Gets the all.
      *
-     * @return
-     * @throws Exception
+     * @return the all
+     * @throws Exception the exception
      */
     public List<Logins> getAll() throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -34,8 +37,9 @@ public class LoginDB {
     }
 
     /**
+     * Delete.
      *
-     * @param user
+     * @param user the user
      */
     public void delete(Logins user) {
        EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -54,10 +58,11 @@ public class LoginDB {
        }
 
     /**
+     * Insert.
      *
-     * @param user
-     * @return
-     * @throws Exception
+     * @param user the user
+     * @return the int
+     * @throws Exception the exception
      */
     public int insert(Logins user) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -78,9 +83,10 @@ public class LoginDB {
     }
 
     /**
+     * Gets the.
      *
-     * @param userID
-     * @return
+     * @param userID the user ID
+     * @return the logins
      */
     public Logins get(Integer userID) {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -95,9 +101,10 @@ public class LoginDB {
     }
 
     /**
+     * Update.
      *
-     * @param user
-     * @throws Exception
+     * @param user the user
+     * @throws Exception the exception
      */
     public void update(Logins user) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();

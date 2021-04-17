@@ -13,17 +13,20 @@ import domain.Company;
 import javax.persistence.Query;
 
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class ItemDB.
  *
  * @author Chelsey Coughlin
  */
 public class ItemDB {
     
     /**
+     * Gets the all.
      *
-     * @param companyID
-     * @return
-     * @throws Exception
+     * @param companyID the company ID
+     * @return the all
+     * @throws Exception the exception
      */
     public List<Item> getAll(Company companyID) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -36,10 +39,11 @@ public class ItemDB {
     }
    
     /**
+     * Gets the.
      *
-     * @param item_ID
-     * @return
-     * @throws Exception
+     * @param item_ID the item ID
+     * @return the item
+     * @throws Exception the exception
      */
     public Item get(int item_ID) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -53,9 +57,10 @@ public class ItemDB {
     }
     
     /**
+     * Insert.
      *
-     * @param item
-     * @throws Exception
+     * @param item the item
+     * @throws Exception the exception
      */
     public void insert(Item item) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -76,9 +81,10 @@ public class ItemDB {
     }
 
     /**
+     * Update.
      *
-     * @param item
-     * @throws Exception
+     * @param item the item
+     * @throws Exception the exception
      */
     public void update(Item item) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -96,9 +102,10 @@ public class ItemDB {
     }
 
     /**
+     * Delete.
      *
-     * @param item
-     * @throws Exception
+     * @param item the item
+     * @throws Exception the exception
      */
     public void delete(Item item) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();

@@ -13,7 +13,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class CompanyPositionsDB.
  *
  * @author 813017, 844817
  */
@@ -27,8 +29,7 @@ public class CompanyPositionsDB {
      *
      * @param companyID The unique username.
      * @return A Company object if found, null otherwise.
-     * @throws Exception
-    
+     * @throws Exception the exception
      */
     
     
@@ -45,10 +46,11 @@ public class CompanyPositionsDB {
     }
     
     /**
+     * Gets the id.
      *
-     * @param posID
-     * @return
-     * @throws Exception
+     * @param posID the pos ID
+     * @return the id
+     * @throws Exception the exception
      */
     public CompanyPositions getID(int posID) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -62,10 +64,11 @@ public class CompanyPositionsDB {
     }
     
     /**
+     * Gets the.
      *
-     * @param compPos
-     * @return
-     * @throws Exception
+     * @param compPos the comp pos
+     * @return the company positions
+     * @throws Exception the exception
      */
     public CompanyPositions get(int compPos) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -79,9 +82,10 @@ public class CompanyPositionsDB {
     }
     
     /**
+     * Gets the all.
      *
-     * @return
-     * @throws Exception
+     * @return the all
+     * @throws Exception the exception
      */
     public List<CompanyPositions> getAll() throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -97,9 +101,10 @@ public class CompanyPositionsDB {
     }
      
     /**
+     * Update.
      *
-     * @param pos
-     * @throws Exception
+     * @param pos the pos
+     * @throws Exception the exception
      */
     public void update(CompanyPositions pos) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -117,10 +122,11 @@ public class CompanyPositionsDB {
     }
      
     /**
+     * Insert.
      *
-     * @param add
-     * @return
-     * @throws Exception
+     * @param add the add
+     * @return the company positions
+     * @throws Exception the exception
      */
     public CompanyPositions insert(CompanyPositions add) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();

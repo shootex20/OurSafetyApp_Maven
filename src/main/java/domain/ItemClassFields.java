@@ -27,7 +27,9 @@ import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class ItemClassFields.
  *
  * @author Chels
  */
@@ -45,54 +47,75 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "ItemClassFields.findByFieldDescrType", query = "SELECT i FROM ItemClassFields i WHERE i.fieldDescrType = :fieldDescrType")})
 public class ItemClassFields implements Serializable {
 
+    /** The Constant serialVersionUID. */
     private static final long serialVersionUID = 1L;
+    
+    /** The item class fields ID. */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "itemClassFields_ID")
     private Integer itemClassFieldsID;
+    
+    /** The date added. */
     @Column(name = "dateAdded")
     @Temporal(TemporalType.DATE)
     private Date dateAdded;
+    
+    /** The date removed. */
     @Column(name = "dateRemoved", insertable=false)
     @Temporal(TemporalType.DATE)
     private Date dateRemoved;
+    
+    /** The user added. */
     @Column(name = "userAdded")
     private Integer userAdded;
+    
+    /** The user removed. */
     @Column(name = "userRemoved", insertable=false)
     private Integer userRemoved;
+    
+    /** The field descr. */
     @Column(name = "fieldDescr")
     private String fieldDescr;
+    
+    /** The field descr type. */
     @Column(name = "fieldDescrType")
     private String fieldDescrType;
+    
+    /** The item class list. */
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval=true, mappedBy = "itemClassFieldsID", fetch = FetchType.EAGER)
     private List<ItemClass> itemClassList;
+    
+    /** The type library ID. */
     @JoinColumn(name = "typeLibrary_ID", referencedColumnName = "typeLibrary_ID")
     @ManyToOne(fetch = FetchType.EAGER)
     private TypeLibrary typeLibraryID;
 
     /**
-     *
+     * Instantiates a new item class fields.
      */
     public ItemClassFields() {
     }
 
     /**
+     * Instantiates a new item class fields.
      *
-     * @param itemClassFieldsID
+     * @param itemClassFieldsID the item class fields ID
      */
     public ItemClassFields(Integer itemClassFieldsID) {
         this.itemClassFieldsID = itemClassFieldsID;
     }
     
     /**
+     * Instantiates a new item class fields.
      *
-     * @param itemClassFieldsID
-     * @param dateAdded
-     * @param userAdded
-     * @param fieldDescr
-     * @param fieldDescrType
-     * @param typeLibraryID
+     * @param itemClassFieldsID the item class fields ID
+     * @param dateAdded the date added
+     * @param userAdded the user added
+     * @param fieldDescr the field descr
+     * @param fieldDescrType the field descr type
+     * @param typeLibraryID the type library ID
      */
     public ItemClassFields(Integer itemClassFieldsID, Date dateAdded, Integer userAdded, 
             String fieldDescr, String fieldDescrType, TypeLibrary typeLibraryID) {
@@ -107,120 +130,135 @@ public class ItemClassFields implements Serializable {
     }
 
     /**
+     * Gets the item class fields ID.
      *
-     * @return
+     * @return the item class fields ID
      */
     public Integer getItemClassFieldsID() {
         return itemClassFieldsID;
     }
 
     /**
+     * Sets the item class fields ID.
      *
-     * @param itemClassFieldsID
+     * @param itemClassFieldsID the new item class fields ID
      */
     public void setItemClassFieldsID(Integer itemClassFieldsID) {
         this.itemClassFieldsID = itemClassFieldsID;
     }
 
     /**
+     * Gets the date added.
      *
-     * @return
+     * @return the date added
      */
     public Date getDateAdded() {
         return dateAdded;
     }
 
     /**
+     * Sets the date added.
      *
-     * @param dateAdded
+     * @param dateAdded the new date added
      */
     public void setDateAdded(Date dateAdded) {
         this.dateAdded = dateAdded;
     }
 
     /**
+     * Gets the date removed.
      *
-     * @return
+     * @return the date removed
      */
     public Date getDateRemoved() {
         return dateRemoved;
     }
 
     /**
+     * Sets the date removed.
      *
-     * @param dateRemoved
+     * @param dateRemoved the new date removed
      */
     public void setDateRemoved(Date dateRemoved) {
         this.dateRemoved = dateRemoved;
     }
 
     /**
+     * Gets the user added.
      *
-     * @return
+     * @return the user added
      */
     public Integer getUserAdded() {
         return userAdded;
     }
 
     /**
+     * Sets the user added.
      *
-     * @param userAdded
+     * @param userAdded the new user added
      */
     public void setUserAdded(Integer userAdded) {
         this.userAdded = userAdded;
     }
 
     /**
+     * Gets the user removed.
      *
-     * @return
+     * @return the user removed
      */
     public Integer getUserRemoved() {
         return userRemoved;
     }
 
     /**
+     * Sets the user removed.
      *
-     * @param userRemoved
+     * @param userRemoved the new user removed
      */
     public void setUserRemoved(Integer userRemoved) {
         this.userRemoved = userRemoved;
     }
 
     /**
+     * Gets the field descr.
      *
-     * @return
+     * @return the field descr
      */
     public String getFieldDescr() {
         return fieldDescr;
     }
 
     /**
+     * Sets the field descr.
      *
-     * @param fieldDescr
+     * @param fieldDescr the new field descr
      */
     public void setFieldDescr(String fieldDescr) {
         this.fieldDescr = fieldDescr;
     }
 
     /**
+     * Gets the field descr type.
      *
-     * @return
+     * @return the field descr type
      */
     public String getFieldDescrType() {
         return fieldDescrType;
     }
 
     /**
+     * Sets the field descr type.
      *
-     * @param fieldDescrType
+     * @param fieldDescrType the new field descr type
      */
     public void setFieldDescrType(String fieldDescrType) {
         this.fieldDescrType = fieldDescrType;
     }
 
     /**
+     * Gets the item class list.
      *
-     * @return
+     * @return the item class list
      */
     @XmlTransient
     public List<ItemClass> getItemClassList() {
@@ -228,29 +266,37 @@ public class ItemClassFields implements Serializable {
     }
 
     /**
+     * Sets the item class list.
      *
-     * @param itemClassList
+     * @param itemClassList the new item class list
      */
     public void setItemClassList(List<ItemClass> itemClassList) {
         this.itemClassList = itemClassList;
     }
 
     /**
+     * Gets the type library ID.
      *
-     * @return
+     * @return the type library ID
      */
     public TypeLibrary getTypeLibraryID() {
         return typeLibraryID;
     }
 
     /**
+     * Sets the type library ID.
      *
-     * @param typeLibraryID
+     * @param typeLibraryID the new type library ID
      */
     public void setTypeLibraryID(TypeLibrary typeLibraryID) {
         this.typeLibraryID = typeLibraryID;
     }
 
+    /**
+     * Hash code.
+     *
+     * @return the int
+     */
     @Override
     public int hashCode() {
         int hash = 0;
@@ -258,6 +304,12 @@ public class ItemClassFields implements Serializable {
         return hash;
     }
 
+    /**
+     * Equals.
+     *
+     * @param object the object
+     * @return true, if successful
+     */
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
@@ -271,6 +323,11 @@ public class ItemClassFields implements Serializable {
         return true;
     }
 
+    /**
+     * To string.
+     *
+     * @return the string
+     */
     @Override
     public String toString() {
         return "domain.Itemclassfields[ itemClassFieldsID=" + itemClassFieldsID + " ]";

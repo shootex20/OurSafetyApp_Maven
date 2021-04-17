@@ -12,17 +12,20 @@ import domain.EmergencyContact;
 import javax.persistence.Query;
 
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class EmergencyContactDB.
  *
  * @author Chelsey Coughlin
  */
 public class EmergencyContactDB {
     
     /**
+     * Gets the.
      *
-     * @param compPerson
-     * @return
-     * @throws Exception
+     * @param compPerson the comp person
+     * @return the emergency contact
+     * @throws Exception the exception
      */
     public EmergencyContact get(int compPerson) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -36,9 +39,10 @@ public class EmergencyContactDB {
     }
 
     /**
+     * Update.
      *
-     * @param con
-     * @throws Exception
+     * @param con the con
+     * @throws Exception the exception
      */
     public void update(EmergencyContact con) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -56,10 +60,11 @@ public class EmergencyContactDB {
     }
         
     /**
+     * Insert.
      *
-     * @param add
-     * @return
-     * @throws Exception
+     * @param add the add
+     * @return the emergency contact
+     * @throws Exception the exception
      */
     public EmergencyContact insert(EmergencyContact add) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();

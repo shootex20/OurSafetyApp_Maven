@@ -1,0 +1,297 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package domain;
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
+import javax.persistence.Basic;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+
+/**
+ *
+ * @author Chels
+ */
+@Entity
+@Table(name = "emergencyContact")
+@XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "EmergencyContact.findAll", query = "SELECT e FROM EmergencyContact e")
+    , @NamedQuery(name = "EmergencyContact.findByEmergencyContactID", query = "SELECT e FROM EmergencyContact e WHERE e.emergencyContactID = :emergencyContactID")
+    , @NamedQuery(name = "EmergencyContact.findByDateAdded", query = "SELECT e FROM EmergencyContact e WHERE e.dateAdded = :dateAdded")
+    , @NamedQuery(name = "EmergencyContact.findByDateRemoved", query = "SELECT e FROM EmergencyContact e WHERE e.dateRemoved = :dateRemoved")
+    , @NamedQuery(name = "EmergencyContact.findByUserAdded", query = "SELECT e FROM EmergencyContact e WHERE e.userAdded = :userAdded")
+    , @NamedQuery(name = "EmergencyContact.findByUserRemoved", query = "SELECT e FROM EmergencyContact e WHERE e.userRemoved = :userRemoved")
+    , @NamedQuery(name = "EmergencyContact.findByEmergencyContactFirstName", query = "SELECT e FROM EmergencyContact e WHERE e.emergencyContactFirstName = :emergencyContactFirstName")
+    , @NamedQuery(name = "EmergencyContact.findByEmergencyContactLastName", query = "SELECT e FROM EmergencyContact e WHERE e.emergencyContactLastName = :emergencyContactLastName")
+    , @NamedQuery(name = "EmergencyContact.findByEmergencyContactNumber", query = "SELECT e FROM EmergencyContact e WHERE e.emergencyContactNumber = :emergencyContactNumber")
+    , @NamedQuery(name = "EmergencyContact.findByEmergencyContactRelationship", query = "SELECT e FROM EmergencyContact e WHERE e.emergencyContactRelationship = :emergencyContactRelationship")})
+public class EmergencyContact implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "emergencyContact_ID", insertable = false)
+    private Integer emergencyContactID;
+    @Column(name = "dateAdded")
+    @Temporal(TemporalType.DATE)
+    private Date dateAdded;
+    @Column(name = "dateRemoved", insertable = false)
+    @Temporal(TemporalType.DATE)
+    private Date dateRemoved;
+    @Column(name = "userAdded")
+    private Integer userAdded;
+    @Column(name = "userRemoved", insertable = false)
+    private Integer userRemoved;
+    @Column(name = "emergencyContactFirstName")
+    private String emergencyContactFirstName;
+    @Column(name = "emergencyContactLastName")
+    private String emergencyContactLastName;
+    @Column(name = "emergencyContactNumber")
+    private String emergencyContactNumber;
+    @Column(name = "emergencyContactRelationship")
+    private String emergencyContactRelationship;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval=true, mappedBy = "emergencyContactID", fetch = FetchType.EAGER)
+    private List<Person> personList;
+
+    /**
+     *
+     */
+    public EmergencyContact() {
+    }
+
+    /**
+     *
+     * @param dateAdded
+     * @param userAdded
+     * @param emergencyContactFirstName
+     * @param emergencyContactLastName
+     * @param emergencyContactNumber
+     * @param emergencyContactRelationship
+     */
+    public EmergencyContact(Date dateAdded, Integer userAdded, String emergencyContactFirstName, String emergencyContactLastName, 
+            String emergencyContactNumber, String emergencyContactRelationship)
+    {
+        
+        this.dateAdded = dateAdded;
+        this.userAdded = userAdded;
+        this.emergencyContactFirstName = emergencyContactFirstName;
+        this.emergencyContactLastName = emergencyContactLastName;
+        this.emergencyContactNumber = emergencyContactNumber;
+        this.emergencyContactRelationship = emergencyContactRelationship;  
+        //this.personList = personList;
+    }
+    
+    /**
+     *
+     * @param emergencyContactID
+     */
+    public EmergencyContact(Integer emergencyContactID) {
+        this.emergencyContactID = emergencyContactID;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Integer getEmergencyContactID() {
+        return emergencyContactID;
+    }
+
+    /**
+     *
+     * @param emergencyContactID
+     */
+    public void setEmergencyContactID(Integer emergencyContactID) {
+        this.emergencyContactID = emergencyContactID;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Date getDateAdded() {
+        return dateAdded;
+    }
+
+    /**
+     *
+     * @param dateAdded
+     */
+    public void setDateAdded(Date dateAdded) {
+        this.dateAdded = dateAdded;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Date getDateRemoved() {
+        return dateRemoved;
+    }
+
+    /**
+     *
+     * @param dateRemoved
+     */
+    public void setDateRemoved(Date dateRemoved) {
+        this.dateRemoved = dateRemoved;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Integer getUserAdded() {
+        return userAdded;
+    }
+
+    /**
+     *
+     * @param userAdded
+     */
+    public void setUserAdded(Integer userAdded) {
+        this.userAdded = userAdded;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Integer getUserRemoved() {
+        return userRemoved;
+    }
+
+    /**
+     *
+     * @param userRemoved
+     */
+    public void setUserRemoved(Integer userRemoved) {
+        this.userRemoved = userRemoved;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getEmergencyContactFirstName() {
+        return emergencyContactFirstName;
+    }
+
+    /**
+     *
+     * @param emergencyContactFirstName
+     */
+    public void setEmergencyContactFirstName(String emergencyContactFirstName) {
+        this.emergencyContactFirstName = emergencyContactFirstName;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getEmergencyContactLastName() {
+        return emergencyContactLastName;
+    }
+
+    /**
+     *
+     * @param emergencyContactLastName
+     */
+    public void setEmergencyContactLastName(String emergencyContactLastName) {
+        this.emergencyContactLastName = emergencyContactLastName;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getEmergencyContactNumber() {
+        return emergencyContactNumber;
+    }
+
+    /**
+     *
+     * @param emergencyContactNumber
+     */
+    public void setEmergencyContactNumber(String emergencyContactNumber) {
+        this.emergencyContactNumber = emergencyContactNumber;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getEmergencyContactRelationship() {
+        return emergencyContactRelationship;
+    }
+
+    /**
+     *
+     * @param emergencyContactRelationship
+     */
+    public void setEmergencyContactRelationship(String emergencyContactRelationship) {
+        this.emergencyContactRelationship = emergencyContactRelationship;
+    }
+
+    /**
+     *
+     * @return
+     */
+    @XmlTransient
+    public List<Person> getPersonList() {
+        return personList;
+    }
+
+    /**
+     *
+     * @param personList
+     */
+    public void setPersonList(List<Person> personList) {
+        this.personList = personList;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (emergencyContactID != null ? emergencyContactID.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof EmergencyContact)) {
+            return false;
+        }
+        EmergencyContact other = (EmergencyContact) object;
+        if ((this.emergencyContactID == null && other.emergencyContactID != null) || (this.emergencyContactID != null && !this.emergencyContactID.equals(other.emergencyContactID))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "domain.Emergencycontact[ emergencyContactID=" + emergencyContactID + " ]";
+    }
+    
+}

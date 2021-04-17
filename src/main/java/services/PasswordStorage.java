@@ -10,6 +10,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Base64;
 
+// TODO: Auto-generated Javadoc
 /**
  * Original Password hashing PBKDF2 algorithm by MicleBrick Dec 3, 2018
  * https://github.com/defuse/password-hashing
@@ -20,23 +21,25 @@ import java.util.Base64;
 public class PasswordStorage {
 
     /**
-     *
+     * The Class InvalidHashException.
      */
     @SuppressWarnings("serial")
     static public class InvalidHashException extends Exception {
 
         /**
+         * Instantiates a new invalid hash exception.
          *
-         * @param message
+         * @param message the message
          */
         public InvalidHashException(String message) {
             super(message);
         }
 
         /**
+         * Instantiates a new invalid hash exception.
          *
-         * @param message
-         * @param source
+         * @param message the message
+         * @param source the source
          */
         public InvalidHashException(String message, Throwable source) {
             super(message, source);
@@ -44,98 +47,82 @@ public class PasswordStorage {
     }
 
     /**
-     *
+     * The Class CannotPerformOperationException.
      */
     @SuppressWarnings("serial")
     static public class CannotPerformOperationException extends Exception {
 
         /**
+         * Instantiates a new cannot perform operation exception.
          *
-         * @param message
+         * @param message the message
          */
         public CannotPerformOperationException(String message) {
             super(message);
         }
 
         /**
+         * Instantiates a new cannot perform operation exception.
          *
-         * @param message
-         * @param source
+         * @param message the message
+         * @param source the source
          */
         public CannotPerformOperationException(String message, Throwable source) {
             super(message, source);
         }
     }
 
-    /**
-     *
-     */
+    /** The Constant PBKDF2_ALGORITHM. */
     public static final String PBKDF2_ALGORITHM = "PBKDF2WithHmacSHA1";
 
     // These constants may be changed without breaking existing hashes.
 
-    /**
-     *
-     */
+    /** The Constant SALT_BYTE_SIZE. */
     public static final int SALT_BYTE_SIZE = 24;
 
-    /**
-     *
-     */
+    /** The Constant HASH_BYTE_SIZE. */
     public static final int HASH_BYTE_SIZE = 18;
 
-    /**
-     *
-     */
+    /** The Constant PBKDF2_ITERATIONS. */
     public static final int PBKDF2_ITERATIONS = 64000;
 
     // These constants define the encoding and may not be changed.
 
-    /**
-     *
-     */
+    /** The Constant HASH_SECTIONS. */
     public static final int HASH_SECTIONS = 5;
 
-    /**
-     *
-     */
+    /** The Constant HASH_ALGORITHM_INDEX. */
     public static final int HASH_ALGORITHM_INDEX = 0;
 
-    /**
-     *
-     */
+    /** The Constant ITERATION_INDEX. */
     public static final int ITERATION_INDEX = 1;
 
-    /**
-     *
-     */
+    /** The Constant HASH_SIZE_INDEX. */
     public static final int HASH_SIZE_INDEX = 2;
 
-    /**
-     *
-     */
+    /** The Constant SALT_INDEX. */
     public static final int SALT_INDEX = 3;
 
-    /**
-     *
-     */
+    /** The Constant PBKDF2_INDEX. */
     public static final int PBKDF2_INDEX = 4;
 
     /**
+     * Creates the hash.
      *
-     * @param password
-     * @return
-     * @throws CannotPerformOperationException
+     * @param password the password
+     * @return the string
+     * @throws CannotPerformOperationException the cannot perform operation exception
      */
     public static String createHash(String password) throws CannotPerformOperationException {
         return createHash(password.toCharArray());
     }
 
     /**
+     * Creates the hash.
      *
-     * @param password
-     * @return
-     * @throws CannotPerformOperationException
+     * @param password the password
+     * @return the string
+     * @throws CannotPerformOperationException the cannot perform operation exception
      */
     public static String createHash(char[] password) throws CannotPerformOperationException {
         // Generate a random salt
@@ -154,24 +141,26 @@ public class PasswordStorage {
     }
 
     /**
+     * Verify password.
      *
-     * @param password
-     * @param correctHash
-     * @return
-     * @throws CannotPerformOperationException
-     * @throws InvalidHashException
+     * @param password the password
+     * @param correctHash the correct hash
+     * @return true, if successful
+     * @throws CannotPerformOperationException the cannot perform operation exception
+     * @throws InvalidHashException the invalid hash exception
      */
     public boolean verifyPassword(String password, String correctHash) throws CannotPerformOperationException, InvalidHashException {
         return verifyPassword(password.toCharArray(), correctHash);
     }
 
     /**
+     * Verify password.
      *
-     * @param password
-     * @param correctHash
-     * @return
-     * @throws CannotPerformOperationException
-     * @throws InvalidHashException
+     * @param password the password
+     * @param correctHash the correct hash
+     * @return true, if successful
+     * @throws CannotPerformOperationException the cannot perform operation exception
+     * @throws InvalidHashException the invalid hash exception
      */
     public boolean verifyPassword(char[] password, String correctHash) throws CannotPerformOperationException, InvalidHashException {
         // Decode the hash into its parameters
@@ -230,6 +219,13 @@ public class PasswordStorage {
         return slowEquals(hash, testHash);
     }
 
+    /**
+     * Slow equals.
+     *
+     * @param a the a
+     * @param b the b
+     * @return true, if successful
+     */
     private static boolean slowEquals(byte[] a, byte[] b) {
         int diff = a.length ^ b.length;
         for (int i = 0; i < a.length && i < b.length; i++) {
@@ -238,6 +234,16 @@ public class PasswordStorage {
         return diff == 0;
     }
 
+    /**
+     * Pbkdf 2.
+     *
+     * @param password the password
+     * @param salt the salt
+     * @param iterations the iterations
+     * @param bytes the bytes
+     * @return the byte[]
+     * @throws CannotPerformOperationException the cannot perform operation exception
+     */
     private static byte[] pbkdf2(char[] password, byte[] salt, int iterations, int bytes) throws CannotPerformOperationException {
         try {
             PBEKeySpec spec = new PBEKeySpec(password, salt, iterations, bytes * 8);
@@ -250,17 +256,31 @@ public class PasswordStorage {
         }
     }
 
+    /**
+     * From base 64.
+     *
+     * @param hex the hex
+     * @return the byte[]
+     * @throws IllegalArgumentException the illegal argument exception
+     */
     private static byte[] fromBase64(String hex) throws IllegalArgumentException {
         return Base64.getDecoder().decode(hex);
     }
 
+    /**
+     * To base 64.
+     *
+     * @param array the array
+     * @return the string
+     */
     private static String toBase64(byte[] array) {
         return Base64.getEncoder().encodeToString(array);
     }
 
     /**
+     * New random password.
      *
-     * @return
+     * @return the string
      */
     public String newRandomPassword() {
         String temporary = Long.toHexString(Double.doubleToLongBits(Math.random()));
@@ -268,9 +288,10 @@ public class PasswordStorage {
     }
 
     /**
+     * Password reset.
      *
-     * @param username
-     * @throws Exception
+     * @param username the username
+     * @throws Exception the exception
      */
     public void passwordReset(String username) throws Exception {
 

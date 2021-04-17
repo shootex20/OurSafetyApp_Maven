@@ -9,19 +9,22 @@ import java.io.IOException;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class AdminFilter.
  *
  * @author Chels
  */
 public class AdminFilter implements Filter {
 
     /**
+     * Do filter.
      *
-     * @param request
-     * @param response
-     * @param chain
-     * @throws IOException
-     * @throws ServletException
+     * @param request the request
+     * @param response the response
+     * @param chain the chain
+     * @throws IOException Signals that an I/O exception has occurred.
+     * @throws ServletException the servlet exception
      */
     @Override
     public void doFilter(ServletRequest request, ServletResponse response,
@@ -45,16 +48,17 @@ public class AdminFilter implements Filter {
     }
 
     /**
+     * Inits the.
      *
-     * @param filterConfig
-     * @throws ServletException
+     * @param filterConfig the filter config
+     * @throws ServletException the servlet exception
      */
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
     }
 
     /**
-     *
+     * Destroy.
      */
     @Override
     public void destroy() {

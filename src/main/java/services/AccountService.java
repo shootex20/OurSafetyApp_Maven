@@ -5,20 +5,26 @@ import domain.Logins;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class AccountService.
  *
  * @author 844817
  */
 public class AccountService {
 
+    /** The user DB. */
     UserDB userDB = new UserDB();
+    
+    /** The ps. */
     PasswordStorage ps = new PasswordStorage();
 
     /**
+     * Login.
      *
-     * @param username
-     * @param password
-     * @return
+     * @param username the username
+     * @param password the password
+     * @return the logins
      */
     public Logins login(String username, String password) {
 

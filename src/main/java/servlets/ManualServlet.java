@@ -34,18 +34,21 @@ import services.CompanypersonService;
 import services.EmailService;
 import services.ManualService;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class ManualServlet.
  *
  * @author Chels
  */
 public class ManualServlet extends HttpServlet {
 
     /**
+     * Do get.
      *
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
+     * @param request the request
+     * @param response the response
+     * @throws ServletException the servlet exception
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -205,11 +208,12 @@ public class ManualServlet extends HttpServlet {
     }
 
     /**
+     * Do post.
      *
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
+     * @param request the request
+     * @param response the response
+     * @throws ServletException the servlet exception
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -384,6 +388,18 @@ public class ManualServlet extends HttpServlet {
         getServletContext().getRequestDispatcher("/WEB-INF/manual.jsp").forward(request, response);
     }
 
+    /**
+     * Perform task.
+     *
+     * @param request the request
+     * @param response the response
+     * @param fileName the file name
+     * @param currTitle the curr title
+     * @param currContent the curr content
+     * @return the string
+     * @throws ServletException the servlet exception
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
     private String performTask(HttpServletRequest request, HttpServletResponse response, String fileName, String currTitle, String currContent) throws ServletException,
             IOException {
 

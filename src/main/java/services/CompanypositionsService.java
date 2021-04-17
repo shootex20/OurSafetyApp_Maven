@@ -13,17 +13,20 @@ import domain.CompanyPositions;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class CompanypositionsService.
  *
  * @author Chels
  */
 public class CompanypositionsService {
     
     /**
+     * Update.
      *
-     * @param posID
-     * @param posTitle
-     * @throws Exception
+     * @param posID the pos ID
+     * @param posTitle the pos title
+     * @throws Exception the exception
      */
     public void update(int posID, String posTitle) throws Exception {
         CompanyPositionsDB compPerDB = new CompanyPositionsDB();
@@ -33,13 +36,14 @@ public class CompanypositionsService {
     }
         
     /**
+     * Insert.
      *
-     * @param userAdded
-     * @param positionTitle
-     * @param companyPersonID
-     * @param companyID
-     * @return
-     * @throws Exception
+     * @param userAdded the user added
+     * @param positionTitle the position title
+     * @param companyPersonID the company person ID
+     * @param companyID the company ID
+     * @return the company positions
+     * @throws Exception the exception
      */
     public CompanyPositions insert(Integer userAdded, String positionTitle, CompanyPerson companyPersonID, Company companyID) throws Exception {
         CompanyPositionsDB addDB = new CompanyPositionsDB();
@@ -56,10 +60,11 @@ public class CompanypositionsService {
     }
         
     /**
+     * Link.
      *
-     * @param posID
-     * @param personID
-     * @throws Exception
+     * @param posID the pos ID
+     * @param personID the person ID
+     * @throws Exception the exception
      */
     public void link(int posID, CompanyPerson personID) throws Exception {
         CompanyPositionsDB addDB = new CompanyPositionsDB();

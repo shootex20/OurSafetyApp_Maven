@@ -27,7 +27,9 @@ import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class Address.
  *
  * @author Chels
  */
@@ -49,67 +51,97 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Address.findByPostalCode", query = "SELECT a FROM Address a WHERE a.postalCode = :postalCode")})
 public class Address implements Serializable {
 
+    /** The company person address list. */
     @OneToMany(mappedBy = "addressID", fetch = FetchType.EAGER)
     private List<CompanyPersonAddress> companyPersonAddressList;
 
+    /** The Constant serialVersionUID. */
     private static final long serialVersionUID = 1L;
+    
+    /** The address ID. */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "address_ID", insertable=false)
     private Integer addressID;
+    
+    /** The date added. */
     @Column(name = "dateAdded")
     @Temporal(TemporalType.DATE)
     private Date dateAdded;
+    
+    /** The date removed. */
     @Column(name = "dateRemoved", insertable=false)
     @Temporal(TemporalType.DATE)
     private Date dateRemoved;
+    
+    /** The user added. */
     @Column(name = "userAdded")
     private Integer userAdded;
+    
+    /** The user removed. */
     @Column(name = "userRemoved", insertable=false)
     private Integer userRemoved;
+    
+    /** The address line 1. */
     @Column(name = "addressLine1")
     private String addressLine1;
+    
+    /** The address line 2. */
     @Column(name = "addressLine2")
     private String addressLine2;
+    
+    /** The city. */
     @Column(name = "city")
     private String city;
+    
+    /** The province. */
     @Column(name = "province")
     private String province;
+    
+    /** The country. */
     @Column(name = "country")
     private String country;
+    
+    /** The postal code. */
     @Column(name = "postalCode")
     private String postalCode;
+    
+    /** The type library ID. */
     @JoinColumn(name = "typeLibrary_ID", referencedColumnName = "typeLibrary_ID",  insertable = false)
     @ManyToOne(fetch = FetchType.EAGER)
     private TypeLibrary typeLibraryID;
+    
+    /** The companypersonaddress list. */
     @OneToMany(orphanRemoval=true, mappedBy = "addressID", fetch = FetchType.EAGER)
     private List<CompanyPersonAddress> companypersonaddressList;
 
     /**
-     *
+     * Instantiates a new address.
      */
     public Address() {
     }
 
     /**
+     * Instantiates a new address.
      *
-     * @param addressID
+     * @param addressID the address ID
      */
     public Address(Integer addressID) {
         this.addressID = addressID;
     }
     
     /**
+     * Instantiates a new address.
      *
-     * @param dateAdded
-     * @param userAdded
-     * @param addressLine1
-     * @param addressLine2
-     * @param city
-     * @param province
-     * @param country
-     * @param postalCode
+     * @param dateAdded the date added
+     * @param userAdded the user added
+     * @param addressLine1 the address line 1
+     * @param addressLine2 the address line 2
+     * @param city the city
+     * @param province the province
+     * @param country the country
+     * @param postalCode the postal code
      */
     public Address(Date dateAdded, Integer userAdded, String addressLine1, String addressLine2, String city, String province, String country, String postalCode) {
         this.dateAdded = dateAdded;
@@ -123,200 +155,225 @@ public class Address implements Serializable {
     }
 
     /**
+     * Gets the address ID.
      *
-     * @return
+     * @return the address ID
      */
     public Integer getAddressID() {
         return addressID;
     }
 
     /**
+     * Sets the address ID.
      *
-     * @param addressID
+     * @param addressID the new address ID
      */
     public void setAddressID(Integer addressID) {
         this.addressID = addressID;
     }
 
     /**
+     * Gets the date added.
      *
-     * @return
+     * @return the date added
      */
     public Date getDateAdded() {
         return dateAdded;
     }
 
     /**
+     * Sets the date added.
      *
-     * @param dateAdded
+     * @param dateAdded the new date added
      */
     public void setDateAdded(Date dateAdded) {
         this.dateAdded = dateAdded;
     }
 
     /**
+     * Gets the date removed.
      *
-     * @return
+     * @return the date removed
      */
     public Date getDateRemoved() {
         return dateRemoved;
     }
 
     /**
+     * Sets the date removed.
      *
-     * @param dateRemoved
+     * @param dateRemoved the new date removed
      */
     public void setDateRemoved(Date dateRemoved) {
         this.dateRemoved = dateRemoved;
     }
 
     /**
+     * Gets the user added.
      *
-     * @return
+     * @return the user added
      */
     public Integer getUserAdded() {
         return userAdded;
     }
 
     /**
+     * Sets the user added.
      *
-     * @param userAdded
+     * @param userAdded the new user added
      */
     public void setUserAdded(Integer userAdded) {
         this.userAdded = userAdded;
     }
 
     /**
+     * Gets the user removed.
      *
-     * @return
+     * @return the user removed
      */
     public Integer getUserRemoved() {
         return userRemoved;
     }
 
     /**
+     * Sets the user removed.
      *
-     * @param userRemoved
+     * @param userRemoved the new user removed
      */
     public void setUserRemoved(Integer userRemoved) {
         this.userRemoved = userRemoved;
     }
 
     /**
+     * Gets the address line 1.
      *
-     * @return
+     * @return the address line 1
      */
     public String getAddressLine1() {
         return addressLine1;
     }
 
     /**
+     * Sets the address line 1.
      *
-     * @param addressLine1
+     * @param addressLine1 the new address line 1
      */
     public void setAddressLine1(String addressLine1) {
         this.addressLine1 = addressLine1;
     }
 
     /**
+     * Gets the address line 2.
      *
-     * @return
+     * @return the address line 2
      */
     public String getAddressLine2() {
         return addressLine2;
     }
 
     /**
+     * Sets the address line 2.
      *
-     * @param addressLine2
+     * @param addressLine2 the new address line 2
      */
     public void setAddressLine2(String addressLine2) {
         this.addressLine2 = addressLine2;
     }
 
     /**
+     * Gets the city.
      *
-     * @return
+     * @return the city
      */
     public String getCity() {
         return city;
     }
 
     /**
+     * Sets the city.
      *
-     * @param city
+     * @param city the new city
      */
     public void setCity(String city) {
         this.city = city;
     }
 
     /**
+     * Gets the province.
      *
-     * @return
+     * @return the province
      */
     public String getProvince() {
         return province;
     }
 
     /**
+     * Sets the province.
      *
-     * @param province
+     * @param province the new province
      */
     public void setProvince(String province) {
         this.province = province;
     }
 
     /**
+     * Gets the country.
      *
-     * @return
+     * @return the country
      */
     public String getCountry() {
         return country;
     }
 
     /**
+     * Sets the country.
      *
-     * @param country
+     * @param country the new country
      */
     public void setCountry(String country) {
         this.country = country;
     }
 
     /**
+     * Gets the postal code.
      *
-     * @return
+     * @return the postal code
      */
     public String getPostalCode() {
         return postalCode;
     }
 
     /**
+     * Sets the postal code.
      *
-     * @param postalCode
+     * @param postalCode the new postal code
      */
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
     }
 
     /**
+     * Gets the type library ID.
      *
-     * @return
+     * @return the type library ID
      */
     public TypeLibrary getTypeLibraryID() {
         return typeLibraryID;
     }
 
     /**
+     * Sets the type library ID.
      *
-     * @param typeLibraryID
+     * @param typeLibraryID the new type library ID
      */
     public void setTypeLibraryID(TypeLibrary typeLibraryID) {
         this.typeLibraryID = typeLibraryID;
     }
 
     /**
+     * Gets the companypersonaddress list.
      *
-     * @return
+     * @return the companypersonaddress list
      */
     @XmlTransient
     public List<CompanyPersonAddress> getCompanypersonaddressList() {
@@ -324,13 +381,19 @@ public class Address implements Serializable {
     }
 
     /**
+     * Sets the companypersonaddress list.
      *
-     * @param companypersonaddressList
+     * @param companypersonaddressList the new companypersonaddress list
      */
     public void setCompanypersonaddressList(List<CompanyPersonAddress> companypersonaddressList) {
         this.companypersonaddressList = companypersonaddressList;
     }
 
+    /**
+     * Hash code.
+     *
+     * @return the int
+     */
     @Override
     public int hashCode() {
         int hash = 0;
@@ -338,6 +401,12 @@ public class Address implements Serializable {
         return hash;
     }
 
+    /**
+     * Equals.
+     *
+     * @param object the object
+     * @return true, if successful
+     */
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
@@ -351,14 +420,20 @@ public class Address implements Serializable {
         return true;
     }
 
+    /**
+     * To string.
+     *
+     * @return the string
+     */
     @Override
     public String toString() {
         return "domain.Address[ addressID=" + addressID + " ]";
     }
 
     /**
+     * Gets the company person address list.
      *
-     * @return
+     * @return the company person address list
      */
     @XmlTransient
     public List<CompanyPersonAddress> getCompanyPersonAddressList() {
@@ -366,8 +441,9 @@ public class Address implements Serializable {
     }
 
     /**
+     * Sets the company person address list.
      *
-     * @param companyPersonAddressList
+     * @param companyPersonAddressList the new company person address list
      */
     public void setCompanyPersonAddressList(List<CompanyPersonAddress> companyPersonAddressList) {
         this.companyPersonAddressList = companyPersonAddressList;
